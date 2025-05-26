@@ -1,4 +1,4 @@
-# Portfolio – Malala Soifer
+# Portfolio – Malala Soifer (in development)
 
 **Welcome to my personal portfolio, where I integrate my specialties in UX/UI, web development, and textile graphic design.**
 **Here I showcase projects that combine creativity, usability, and technology, reflecting how I think and design at every step.**
@@ -55,10 +55,10 @@ LinkedIn: https://www.linkedin.com/in/malalasoifer
 
 Behance: https://www.behance.net/malalasoifer
 
-Email: malalasoifer@mail.com
+Email: malalasoifer@gmail.com
 _____________________________________________________________________________________________________________
 
-# Portfolio - Malala Soifer
+# Portfolio - Malala Soifer (en desarrollo)
 
 
 **Bienvenido a mi portfolio personal, donde integro mis especialidades en UX/UI, desarrollo web y diseño**
@@ -114,5 +114,5 @@ Abri el archivo 'index.html' en tu navegador o visitá el enlace publicado (por 
 
  LinkedIn: https://www.linkedin.com/in/malalasoifer
  Behance: https://www.behance.net/malalasoifer
- Email: malalasoifer@mail.com
+ Email: malalasoifer@gmail.com
 
