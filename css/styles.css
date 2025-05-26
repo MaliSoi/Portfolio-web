@@ -64,14 +64,30 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto visual */
     padding: 10px 0px; /* Ajusta el padding según lo necesario */
     width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
-}
+    }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; 
     padding: 0 20px;
 }
+
+.logo {
+    line-height: 0; /* Esto ayuda a eliminar espacio extra debajo de las imágenes */
+}
+
+/* Estilos para la imagen del logo dentro de .logo */
+.logo img {
+    height: 40px; /* <-- **CLAVE:** Define un tamaño fijo para tu logo. AJUSTA ESTE VALOR. */
+    font-weight: 600;
+    width: auto; /* Mantiene la proporción original de la imagen */
+    display: block; /* Asegura que no haya espacio extra debajo de la imagen */
+    vertical-align: middle; /* Por si el logo tiene texto al lado */
+}
+
 
 .nav-links {
     list-style: none;
@@ -92,7 +108,7 @@ header {
     /* Aquí los links de la nav bar heredarán el color del header si no se especifica. */
     /* Pero si quieres un color específico para ellos: */
     color: #1d2022;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     display: block;
     padding: 10px 20px; /* Ajusta el padding para que los enlaces tengan más espacio dentro de su contenedor */
@@ -108,6 +124,7 @@ header {
 
 .profile-toggle {
     background-color: #1d2022;
+    font-size: 1.2rem;
     color: #fcfaf7;
     padding: 12px 25px;
     border: none;
@@ -134,8 +151,8 @@ header {
 /* ========================================================================= */
 #hero {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1070px;
+    margin: 80px auto;
     padding: 2% 2%;
     display: flex;
     justify-content: space-between;
@@ -145,7 +162,7 @@ header {
 }
 
 .hero-content {
-    width: 50%;
+    width: 60%;
     text-align: left;
 }
 
@@ -162,7 +179,7 @@ header {
 }
 
 .hero-description {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 400;
     margin-bottom: 40px;
     line-height: 1.6;
@@ -187,7 +204,7 @@ header {
 #about {
     max-width: 1000px;
     margin: 80px auto;
-    padding: 40px;
+    padding: 2% 2%;
     text-align: left;
 }
 
@@ -199,10 +216,11 @@ header {
 }
 
 #about-text {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     line-height: 1.8;
     color: #1d2022;
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 /* ========================================================================= */
@@ -348,7 +366,7 @@ header {
 }
 
 /* Título de la página de detalle (el H1 grande) */
-.project-container .project-header .project-title {
+.project-container .project-header .project-title  {
     font-family: "Manrope", sans-serif; 
     font-weight: 700;
     color: #1d2022;
@@ -428,7 +446,8 @@ header {
 .project-result,
 .project-content-section,
 .project-process,
-.project-learnings { /* Consolidado para evitar duplicados */
+.project-learnings,
+.project-contribution { /* Consolidado para evitar duplicados */
     line-height: 1.6;
     font-size: 1.6rem;
     margin-top: 10%;
@@ -505,6 +524,236 @@ header {
 }
 
 /* ========================================================================= */
+/* --- SKILLS SECTION --- */
+/* ========================================================================= */
+#skills { /* ¡Ajustado a #skills! */
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 2% 2%;
+    text-align: center;
+}
+
+#skills h2 { /* ¡Ajustado a #skills! */
+    font-family: "Manrope", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #1d2022;
+    text-align: center;
+}
+
+#skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+#skills-list li {
+    background-color: #fcfaf7;
+    color: #1d2022;
+    padding: 10px 20px;
+    border: 1px solid #4d555b;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+#skills-list li:hover {
+    background-color: #1d2022;
+    color: #fcfaf7;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================================================= */
+/* --- CONTACT SECTION --- */
+/* ========================================================================= */
+#contact {
+    max-width: 700px; /* Un poco más estrecho para el formulario */
+    margin: 80px auto;
+    padding: 2% 2%;
+    text-align: center; /* Centra el contenido general de la sección */
+}
+
+#contact h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #1d2022;
+    text-align: center; /* Asegura que el título H2 esté centrado */
+}
+
+#contact p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #4d555b; /* Un color de texto un poco más suave para los párrafos */
+    margin-bottom: 25px;
+}
+
+#contact p a {
+    color: #1d2022; /* Color de link más oscuro para contraste */
+    font-weight: 600; /* Hace los links más destacados */
+}
+
+#contact p a:hover {
+    color: #007bff; /* Mantiene el hover global, o puedes elegir uno específico */
+    text-decoration: underline; /* Agrega un subrayado al hover para más feedback */
+}
+
+/* Estilos del Formulario */
+#contact-form {
+    display: flex;
+    flex-direction: column; /* Apila los elementos del formulario */
+    gap: 20px; /* Espacio entre los campos */
+    margin-top: 40px; /* Margen superior para separar del texto */
+    text-align: left; /* Alinea los inputs y el botón a la izquierda dentro del formulario */
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%; /* Ocupa todo el ancho disponible del contenedor del formulario */
+    padding: 15px;
+    border: 1px solid #cccccc; /* Borde suave */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.1rem;
+    color: #1d2022;
+    background-color: #fcfaf7; /* Coherente con el fondo */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #007bff; /* Borde azul al enfocar */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Sombra sutil al enfocar */
+    outline: none; /* Elimina el contorno por defecto del navegador */
+}
+
+#contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px; /* Altura mínima del área de texto */
+}
+
+#contact-form button[type="submit"] {
+    background-color: #1d2022; /* Fondo oscuro, coherente con tus botones */
+    color: #fcfaf7; /* Texto claro */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: center; /* Centra el botón si es de ancho variable */
+    max-width: 200px; /* O un ancho fijo para el botón */
+}
+
+#contact-form button[type="submit"]:hover {
+    background-color: #4d555b; /* Color de hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form button[type="submit"]:active {
+    background-color: #4d555b;
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ========================================================================= */
+/* --- FOOTER --- */
+/* ========================================================================= */
+#footer {
+    background-color: #1d2022; /* Color de fondo oscuro */
+    color: #fcfaf7; /* Texto claro */
+    padding: 40px 20px; /* Padding superior/inferior y lateral */
+    margin-top: 80px; /* Espacio por encima del footer */
+    /* text-align: center;  Quitamos esto del padre para que flexbox lo maneje mejor */
+}
+
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Apila los elementos principales: copyright, nav, social */
+    align-items: center; /* Centra horizontalmente los elementos apilados */
+    max-width: 1000px; /* Mismo ancho que tu contenido principal */
+    margin: 0 auto; /* Centra el contenedor del footer */
+    gap: 20px; /* Espacio entre el copyright, nav y social */
+    list-style: none;
+}
+
+
+.footer-section {
+    flex: 1; /* Permite que las secciones crezcan y se encojan */
+    min-width: 180px; /* Ancho mínimo antes de que se envuelvan */
+    margin: 20px; /* Espacio entre las secciones */
+    text-align: left; /* Alinea el texto a la izquierda dentro de cada sección */
+}
+
+/* Estilos para los enlaces de navegación */
+.footer-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para que los enlaces estén en una línea */
+    justify-content: center; /* Centra los enlaces de navegación */
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan si no hay espacio */
+    gap: 25px; /* Espacio entre cada enlace de navegación */
+}
+
+.footer-nav-links li a {
+    color: #fcfaf7; /* Color de los enlaces de navegación */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav-links li a:hover {
+    color: #007bff; /* Color de acento al pasar el ratón */
+}
+
+/* Estilos para los enlaces de redes sociales/contacto */
+.footer-social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para que los iconos estén en una línea */
+    justify-content: center; /* Centra los iconos de redes sociales */
+    flex-wrap: wrap; /* Permite que los iconos se envuelvan si no hay espacio */
+    gap: 25px; /* Espacio entre cada icono social */
+}
+
+.footer-social-links li a {
+    color: #fcfaf7; /* Color de los iconos sociales */
+    font-size: 1.6rem; /* Tamaño de los iconos, ajusta a tu gusto */
+    transition: color 0.3s ease;
+}
+
+.footer-social-links li a:hover {
+    color: #007bff; /* Color de acento al pasar el ratón */
+}
+
+
+.footer-copyright {
+     text-align: center;
+    font-size: 0.85rem;
+    color: #888; /* Un color más tenue para el copyright */
+}
+
+.footer-copyright p {
+    margin: 5px 0; /* Espacio entre las líneas de copyright */
+}
+
+
+
+
+
+/* ========================================================================= */
 /* --- RESPONSIVE STYLES --- */
 /* ========================================================================= */
 @media (max-width: 768px) {
@@ -572,6 +821,20 @@ header {
     }
 
 
+
+/* Responsive para Skills */
+@media (max-width: 768px) {
+    #skills h2 { /* ¡Ajustado a #skills! */
+        font-size: 2rem;
+    }
+
+    #skills-list li {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
+
     /* Ajustes Responsivos para la sección de detalle del proyecto */
 @media (max-width: 768px) {
     .project-header {
@@ -605,6 +868,47 @@ header {
     .project-ficha {
         flex-direction: column; /* Apila los elementos de la ficha */
         gap: 1rem;
+    }
+}
+
+/* Responsive para Contact */
+@media (max-width: 768px) {
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    #contact p {
+        font-size: 1.1rem;
+    }
+
+    #contact-form input,
+    #contact-form textarea,
+    #contact-form button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* Responsive para el footer */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 15px; /* Menos espacio entre secciones en móvil */
+    }
+
+    .footer-nav-links {
+        gap: 15px; /* Menos espacio entre links de navegación en móvil */
+    }
+
+    .footer-nav-links li a {
+        font-size: 0.9rem;
+    }
+
+    .footer-social-links {
+        gap: 18px; /* Menos espacio entre iconos sociales en móvil */
+    }
+
+    .footer-social-links li a {
+        font-size: 1.3rem; /* Reduce el tamaño de los iconos en móvil */
     }
 }
 
