@@ -1,7 +1,7 @@
 # Portfolio – Malala Soifer
 
-## **Welcome to my personal portfolio, where I integrate my specialties in UX/UI, web development, and textile graphic design.
-## Here I showcase projects that combine creativity, usability, and technology, reflecting how I think and design at every step.**
+## Welcome to my personal portfolio, where I integrate my specialties in UX/UI, web development, and textile graphic design.
+## Here I showcase projects that combine creativity, usability, and technology, reflecting how I think and design at every step.
 
 ![preview image of website](/images/Screenshot%20Portfolio.jpg)
 
