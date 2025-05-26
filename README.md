@@ -5,7 +5,7 @@ Here I showcase projects that combine creativity, usability, and technology, ref
 
 ![preview image of website](/images/Screenshot%20Portfolio.jpg)
 
-Project Structure
+## 📁Project Structure   
 
 Project/
 |
@@ -17,7 +17,7 @@ Project/
 +-- img/               # Images used in the projects
 +-- README.md          # Project documentation
 
-Areas of Expertise:
+## 🧩 Areas of Expertise:
 
 User-centered UX/UI design
 
@@ -29,7 +29,7 @@ Graphic and textile design.
 
 Illustration, prints, and surface design.
 
-Tools Used:
+## 🛠️ Tools Used:
 
 Figma, Photoshop, Illustrator, InDesign
 
@@ -37,7 +37,7 @@ HTML5, CSS3, JS
 
 Git & GitHub
 
-Portfolio Features
+## ✨ Portfolio Features: 
 
 Responsive design, adaptable to mobile and desktop devices
 
@@ -45,11 +45,11 @@ Projects with complete details of the design process and results
 
 Links to my professional profiles and contact information
 
-How to View-
+## 🚀 How to View:
 
 Open the file index.html in your browser or visit the published link (for example, using GitHub Pages).
 
-Contact:
+## 📬 Contact :
 
 LinkedIn: https://www.linkedin.com/in/malalasoifer
 
@@ -66,8 +66,7 @@ gráfico textil. Aqui muestro proyectos que combinan creatividad, usabilidad y t
 en cada paso.
 
 
-
-Estructura del proyecto:
+## 📁 Estructura del proyecto
 
 Project/
 |
@@ -79,7 +78,7 @@ Project/
 +-- img/               # Imagenes utilizadas en los proyectos
 +-- README.md          # Documentación del proyecto
 
-Areas de especialidad:
+## 🧩 Áreas de especialidad
 
  Diseno UX/UI centrado en el usuario.
 
@@ -91,15 +90,15 @@ Areas de especialidad:
 
  Ilustración, estampas y diseño de superficies.
 
-Herramientas utilizadas:
+## 🛠️ Herramientas utilizadas:
 
- Figma, Photoshop, Illustrator, InDesign
+ -Figma, Photoshop, Illustrator, InDesign
 
- HTML5, CSS3, JS
+ -HTML5, CSS3, JS
 
- Git & GitHub
+ -Git & GitHub
 
-Funcionalidades del portfolio:
+## ✨ Funcionalidades del portfolio:
 
  Diseno responsive, adaptable a dispositivos moviles y desktop.
 
@@ -107,11 +106,11 @@ Funcionalidades del portfolio:
 
  Enlaces a mis perfiles profesionales y formas de contacto.
 
-Como visualizarlo:
+## 🚀 Cómo visualizarlo:
 
 Abri el archivo 'index.html' en tu navegador o visitá el enlace publicado (por ejemplo, usando GitHub Pages).
 
-Contacto
+## 📬 Contacto:
 
  LinkedIn: https://www.linkedin.com/in/malalasoifer
  Behance: https://www.behance.net/malalasoifer
