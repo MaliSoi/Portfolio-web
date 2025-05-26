@@ -1,0 +1,611 @@
+/* ========================================================================= */
+/* --- GENERAL STYLES & RESETS --- */
+/* ========================================================================= */
+body {
+    font-family: "Work Sans", sans-serif; /* Work Sans como fuente principal para el body */
+    margin: 0;
+    padding: 0;
+    background-color: #fcfaf7;
+    color: #1d2022;
+}
+
+main {
+    background-color: #fcfaf7;
+    min-height: 100vh;
+    padding: 20px; /* Consolidado para evitar duplicados */
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: #fcfaf7;
+    color: #1d2022;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Links Globales - Importante para evitar que el color del link sobreescriba */
+/* Esto asegura que los links hereden el color de su padre a menos que se especifique lo contrario */
+a {
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    color: inherit; /* Hereda el color del texto del elemento padre */
+    transition: color 0.3s ease; /* Transición para cambios de color */
+}
+
+a:hover {
+    color: #007bff; /* Color por defecto de hover para los enlaces, puedes ajustarlo */
+}
+
+/* ========================================================================= */
+/* --- FADE ANIMATION (CONTROLLED BY JAVASCRIPT) --- */
+/* ========================================================================= */
+/* Inicialmente, todos los elementos con la clase fade-element estarán ocultos */
+.fade-element {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Cuando el elemento entra en el viewport, se le aplica fade-in */
+.fade-element.fade-in { /* Más específico que solo .fade-in */
+    opacity: 1;
+}
+
+/* ========================================================================= */
+/* --- HEADER & NAVIGATION --- */
+/* ========================================================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegúrate de que el header esté por encima del contenido */
+    background-color: #fcfaf7;
+    color: #1d2022;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto visual */
+    padding: 10px 0px; /* Ajusta el padding según lo necesario */
+    width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0; /* Elimina el margen por defecto de la lista */
+    padding: 0; /* Elimina el padding por defecto de la lista */
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0; /* Elimina el margen del último elemento */
+}
+
+.nav-links a {
+    /* Aquí los links de la nav bar heredarán el color del header si no se especifica. */
+    /* Pero si quieres un color específico para ellos: */
+    color: #1d2022;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: block;
+    padding: 10px 20px; /* Ajusta el padding para que los enlaces tengan más espacio dentro de su contenedor */
+    font-family: "Manrope", sans-serif; 
+}
+
+/* Profile Toggle Button */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 40px;
+}
+
+.profile-toggle {
+    background-color: #1d2022;
+    color: #fcfaf7;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.profile-toggle:hover {
+    background-color: #4d555b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-toggle:active {
+    background-color: #4d555b; /* Cambia el color al presionar el botón */
+    transform: translateY(0); /* Efecto de "presionar" al hacer clic */
+    box-shadow: none; /* Quita la sombra al presionar */
+}
+
+/* ========================================================================= */
+/* --- HERO SECTION --- */
+/* ========================================================================= */
+#hero {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2% 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.hero-content {
+    width: 50%;
+    text-align: left;
+}
+
+.hero-title {
+    font-family: "Manrope", sans-serif; 
+    width: 100%;
+    font-size: 8rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #161616;
+    margin: 0 0 20px 0;
+}
+
+.hero-description {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    width: 100%;
+    color: #4d555b;
+}
+
+.image-content {
+    width: 100%;
+    text-align: right;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+/* ========================================================================= */
+/* --- ABOUT SECTION --- */
+/* ========================================================================= */
+#about {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px;
+    text-align: left;
+}
+
+#about h2 {
+    font-family: "Manrope", sans-serif; 
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #1d2022;
+}
+
+#about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #1d2022;
+    margin-bottom: 20px;
+}
+
+/* ========================================================================= */
+/* --- PROJECTS SECTION (CARDS OVERVIEW) --- */
+/* ========================================================================= */
+#projects {
+    margin: 80px auto;
+    background-color: #fcfaf7;
+}
+
+#projects h2 {
+    font-family: "Manrope", sans-serif; 
+    max-width: 1000px;
+    margin: 80px auto;
+    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 60px;
+    color: #1d2022;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 2rem;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 4/4;
+    z-index: 1; /* Base z-index for the card */
+}
+
+/* Overlay que aparece al hacer hover sobre la tarjeta */
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Capa oscura translúcida */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0; /* Asegura que esté debajo de la imagen y el texto */
+    pointer-events: none; /* Permite que los clics pasen a los elementos subyacentes */
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+/* Título de la tarjeta (el que está dentro del 'a') */
+.project-card a .project-title { /* ¡Selector más específico para el color! */
+    font-family: "Manrope", sans-serif; 
+    font-weight: 600;
+    color: #fcfaf7; /* <-- ¡Cambiado a blanco para que se vea sobre el overlay oscuro! */
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0 10px;
+    
+    /* Propiedades de posicionamiento y z-index para visibilidad sobre overlay */
+    position: absolute; /* Posiciona el título sobre la card */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el título */
+    z-index: 2; /* Más alto que el overlay y la imagen */
+    width: 100%; /* Para que el text-align center funcione bien */
+    box-sizing: border-box; /* Para que el padding no desborde */
+
+    /* Control de visibilidad para cuando la tarjeta no tiene hover */
+    opacity: 0; /* Inicialmente oculto para que aparezca con el hover */
+    transition: opacity 0.3s ease; /* Transición suave para la aparición */
+}
+
+/* Hace que el título aparezca cuando se hace hover sobre la tarjeta */
+.project-card:hover .project-title {
+    opacity: 1; /* Título visible al hacer hover sobre la card */
+}
+
+/* Contenedor de la imagen dentro de la tarjeta */
+.project-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    z-index: 1; /* Asegura que el contenedor de la imagen esté sobre el after */
+}
+
+/* La imagen real */
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Cambiado a cover para que la imagen ocupe todo el espacio */
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.20);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ========================================================================= */
+/* --- PROJECT DETAIL PAGE TEMPLATE --- */
+/* ========================================================================= */
+.project-detail {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor principal */
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+
+/* Header: título a la izquierda, brief a la derecha */
+.project-header {
+    display: flex; /* Habilita Flexbox para organizar los hijos */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: space-between; /* Empuja el título a la izquierda y el brief a la derecha */
+    gap: 2rem; /* Espacio entre el título y el brief */
+    margin-bottom: 2rem;
+    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+    /* Añadido padding horizontal para que el contenido no toque los bordes */
+    padding: 0 1rem; 
+}
+
+/* Título de la página de detalle (el H1 grande) */
+.project-container .project-header .project-title {
+    font-family: "Manrope", sans-serif; 
+    font-weight: 700;
+    color: #1d2022;
+    font-size: 2.8rem; /* El tamaño de la captura */
+    text-align: left;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    position: static; /* Asegura que se comporte normalmente */
+    z-index: auto;
+
+    flex: 1 1 50%; /* Permite que crezca/encoga, base del 50% */
+    max-width: 40%; /* Limita el ancho máximo para el título */
+    min-width: 300px; /* Asegura que el título no sea demasiado pequeño en pantallas intermedias */
+    box-sizing: border-box; /* Para que el padding no afecte el ancho total */
+    padding-right: 1rem; /* Margen interno a la derecha para separar del brief */
+}
+
+/* Brief ocupa otra parte del ancho (derecha) */
+.project-brief {
+    flex: 1 1 45%; /* Permite que crezca/encoga, base del 45% (un poco menos que el título para el gap) */
+    text-align: left; /* Alinea el texto a la izquierda dentro del brief */
+    margin-top: 3rem; /* Alinea su parte superior con el título */
+    box-sizing: border-box;
+    padding-left: 6rem; /* Margen interno a la izquierda para separar del título */
+}
+
+.project-brief h2 { /* Estilo para el "Brief" h2 */
+    font-family: "Manrope", sans-serif; 
+    font-size: 2rem; /* Ajusta el tamaño si es necesario */
+    margin-bottom: 0.8rem; /* Espacio debajo del título del brief */
+    color: #1d2022;
+}
+
+.project-brief p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem; /* Espacio debajo del párrafo del brief */
+    color: #4d555b; /* Un color de texto más suave */
+}
+
+
+/* Ficha dentro del brief */
+.project-ficha {
+    margin-top: 2rem; /* Margen superior para separarlo del párrafo del brief */
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-ficha > div {
+    flex: 1 1 120px;
+    background: #f5f5f5;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    color: #222; /* Color para el texto dentro de la ficha */
+}
+
+
+.project-media img {
+    width: 100%;
+    max-width: 1200px;
+    height: 90%;
+    border-radius: 0px;
+    margin-bottom: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añadido aquí */
+    transition: transform 0.3s ease; /* Añadido aquí */
+}
+
+.project-challenge,
+.project-gallery,
+.project-result,
+.project-content-section,
+.project-process,
+.project-learnings { /* Consolidado para evitar duplicados */
+    line-height: 1.6;
+    font-size: 1.6rem;
+    margin-top: 10%;
+    margin-bottom: 60px; /* Usar el valor mayor de los dos */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.project-content-section h2 {
+    font-family: "Manrope", sans-serif; 
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 6px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añadido aquí */
+    transition: transform 0.3s ease; /* Añadido aquí */
+}
+
+.gallery-grid img:hover { /* Efecto de hover para las imágenes de galería */
+    transform: scale(1.02);
+}
+
+.full-width-image {
+    grid-column: 1 / -1;
+}
+
+.back-to-portfolio {
+    display: inline-block;
+    margin: 30px 0;
+    color: #1d2022;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+}
+
+.back-to-portfolio:hover {
+    transform: translateX(-5px);
+}
+
+.back-to-portfolio i {
+    margin-right: 5px;
+}
+
+.ver-proyecto-link {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #1d2022;
+    color: #fcfaf7;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ver-proyecto-link:hover {
+    background-color: #4d555b; /* Ajustado el color de hover para este botón */
+    transform: translateY(-2px);
+}
+
+/* ========================================================================= */
+/* --- RESPONSIVE STYLES --- */
+/* ========================================================================= */
+@media (max-width: 768px) {
+    /* Hero Section */
+    #hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content, .image-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 4rem; /* Reducir tamaño para móviles */
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    /* Projects Section (Cards) */
+    .project-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        padding: 0 1rem;
+    }
+
+    /* Project Detail Page */
+    .project-header {
+        flex-direction: column;
+    }
+
+    .project-container .project-header .project-title {
+        flex: none;
+        font-size: 1.8rem; /* Reducir tamaño para móviles */
+        margin-bottom: 1rem;
+    }
+
+    .project-brief {
+        flex: none;
+    }
+
+    .project-ficha {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-detail h1 {
+        font-size: 2rem;
+    }
+
+    .project-detail h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+    }
+
+
+    /* Ajustes Responsivos para la sección de detalle del proyecto */
+@media (max-width: 768px) {
+    .project-header {
+        flex-direction: column; /* Apila los elementos en una columna */
+        align-items: flex-start; /* Alinea al inicio cuando están apilados */
+        padding: 0 1rem; /* Padding para que no toque los bordes */
+    }
+
+    .project-container .project-header .project-title,
+    .project-brief {
+        flex: none; /* Deshabilita flex-grow/shrink */
+        width: 100%; /* Ocupa todo el ancho */
+        max-width: none; /* Elimina límite de ancho máximo */
+        padding-left: 0; /* Elimina padding lateral que pusimos para desktop */
+        padding-right: 0;
+        margin-top: 1rem; /* Ajusta márgenes para que se vean bien apilados */
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+    }
+
+    .project-container .project-header .project-title {
+        font-size: 1.8rem; /* Reducir tamaño para móviles */
+        text-align: left; /* Mantener la alineación a la izquierda */
+        margin-top: 2rem; /* Margen superior para el título */
+    }
+
+    .project-brief {
+        margin-top: 1rem; /* Margen para el brief debajo del título */
+    }
+
+    .project-ficha {
+        flex-direction: column; /* Apila los elementos de la ficha */
+        gap: 1rem;
+    }
+}
+
+}
