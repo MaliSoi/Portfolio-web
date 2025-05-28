@@ -5,11 +5,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio personal | Malala Soifer</title>
-  <link rel="stylesheet" href="/css/styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- FIXED: Changed CSS path to be relative from subfolder -->
+  <link rel="stylesheet" href="../../css/styles.css">
+  
   
 </head>
 
 <body>
+<!-- Header - Same as your main page -->
+  <header class="fade-element">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../images/LOGO NUEVO_semibold_gris.png" alt="Malala Soifer Logo">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../index.html#projects">Projects</a></li>
+        <li><a href="../../index.html#skills">Skills</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+      <button id="profile-toggle" class="profile-toggle">Textile design</button>
+    </nav>
+  </header>
+
+  
+  <!-- Back to Portfolio Link -->
+<div class="back-to-portfolio-container">
+  <a href="../../index.html" class="back-to-portfolio">
+    <i class="fas fa-arrow-left"></i>
+    Back to portfolio
+  </a>
+</div>
+
+  <!-- Add main tag at the beginning -->
+  <main>
+
     <div class="project-container">
     <section class="project-header">
         <h1 class="project-title">Portfolio personal | Malala Soifer</h1>
@@ -29,16 +63,18 @@
     </div>
 
     <div class="project-media">
-      <img src="/images/screenshot.jpg" alt="Proyecto 1" />
+      <!-- FIXED: Updated image path to be relative -->
+      <img src="../../images/screenshot.jpg" alt="Proyecto 1" />
+      <!--<img src="/images/screenshot.jpg" alt="Proyecto 1" />-->
     </div>
 
-    <div>
+   
     <section class="project-challenge">
       <h2>The Challenge</h2>
       <p>The main challenge was to merge both worlds —my background in textile design and my new path in UX/UI— into one
         clear, engaging, easy-to-read place that wouldn’t overwhelm, and that felt like me.</p>
     </section>
-    </div>
+    
 
     <section class="project-process">
       <h2>The Process</h2>
@@ -51,10 +87,15 @@
     <section class="project-gallery">
       <h2>Galería</h2>
       <div class="gallery-grid">
-        <img src="/images/Screenshot Portfolio.jpg" alt="Imagen 1" />
+        <!-- FIXED: Updated all image paths to be relative -->
+        <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 1" />
+        <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 2" />
+        <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 3" />
+        <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 4" />
+        <!--<img src="/images/Screenshot Portfolio.jpg" alt="Imagen 1" />
         <img src="/images/Screenshot Portfolio.jpg" alt="Imagen 2" />
         <img src="/images/Screenshot Portfolio.jpg" alt="Imagen 3" />
-        <img src="/images/Screenshot Portfolio.jpg" alt="Imagen 4" />
+        <img src="/images/Screenshot Portfolio.jpg" alt="Imagen 4" />-->
       </div>
     </section>
 
@@ -66,7 +107,9 @@
     </section>
 
     <div class="project-media">
-      <img src="/images/screenshot.jpg" alt="Proyecto 1" />
+      <!-- FIXED: Updated image path to be relative -->
+      <img src="../../images/screenshot.jpg" alt="Proyecto 1" />
+      <!--<img src="/images/screenshot.jpg" alt="Proyecto 1" />-->
     </div>
 
     <section class="project-learnings">
@@ -76,17 +119,26 @@
         And above all, I’m proud to have built this portfolio from scratch.</p>
     </section>
 
+  <!-- FIXED: Removed the extra </main> tag that was here -->
 
- <!--Footer-->
+ 
+ <!-- Footer with proper structure -->
   
  <footer class="fade-element" id="footer">
         <div class="footer-content">
-            <ul class="footer-nav-links">
+           <!-- FIXED: Updated navigation links to go back to main page sections -->
+        <ul class="footer-nav-links">
+          <li><a href="../../Index.html#about">About</a></li>
+          <li><a href="../../Index.html#projects">Projects</a></li>
+          <li><a href="../../Index.html#skills">Skills</a></li>
+          <li><a href="../../Index.html#contact">Contact</a></li>
+        </ul>
+            <!--<ul class="footer-nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
-            </ul>
+            </ul>-->
 
             <ul class="footer-social-links">
                 <li><a href="https://www.behance.net/tu_usuario" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a></li>
@@ -101,8 +153,11 @@
         </div>
     </footer>
 
+</main>
 
-   <script src="./js/script.js"></script>
+   <!-- FIXED: Updated script path to be relative -->
+  <script src="../../js/script.js"></script>
+   <!--<script src="./js/script.js"></script>-->
 
   </body>
 </html>

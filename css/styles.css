@@ -1,12 +1,15 @@
 /* ========================================================================= */
 /* --- GENERAL STYLES & RESETS --- */
 /* ========================================================================= */
+
 body {
     font-family: "Work Sans", sans-serif; /* Work Sans como fuente principal para el body */
     margin: 0;
     padding: 0;
     background-color: #fcfaf7;
     color: #1d2022;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 main {
@@ -17,13 +20,6 @@ main {
 
 section {
     margin-bottom: 50px;
-}
-
-footer {
-    background-color: #fcfaf7;
-    color: #1d2022;
-    text-align: center;
-    padding: 10px;
 }
 
 /* Links Globales - Importante para evitar que el color del link sobreescriba */
@@ -38,6 +34,8 @@ a:hover {
     color: #007bff; /* Color por defecto de hover para los enlaces, puedes ajustarlo */
 }
 
+
+
 /* ========================================================================= */
 /* --- FADE ANIMATION (CONTROLLED BY JAVASCRIPT) --- */
 /* ========================================================================= */
@@ -50,6 +48,33 @@ a:hover {
 /* Cuando el elemento entra en el viewport, se le aplica fade-in */
 .fade-element.fade-in { /* Más específico que solo .fade-in */
     opacity: 1;
+}
+
+.back-to-portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 1rem 0;
+}
+
+.back-to-portfolio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1d2022;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.back-to-portfolio:hover {
+  color: #007bff;
+  transform: translateX(-5px);
+}
+
+.back-to-portfolio i {
+  font-size: 1rem;
 }
 
 /* ========================================================================= */
@@ -665,15 +690,58 @@ header {
     box-shadow: none;
 }
 
+
+/*back to top*/
+
+.back-to-top-section {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 40px;
+}
+
+.back-to-top-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: rgba(60, 60, 60, 0.5);
+  transition: color 0.3s ease;
+}
+
+.back-to-top-link:hover {
+  color: rgba(30, 30, 30, 0.7);
+}
+
+.arrow-icon {
+  stroke: currentColor;
+  width: 50px;
+  height: 50px;
+  transition: stroke 0.3s ease;
+}
+
+.back-to-top-text {
+  margin-top: 8px;
+  font-size: 1.4rem;
+}
+
+
 /* ========================================================================= */
 /* --- FOOTER --- */
 /* ========================================================================= */
-#footer {
+
+footer, #footer {
     background-color: #1d2022; /* Color de fondo oscuro */
     color: #fcfaf7; /* Texto claro */
     padding: 40px 20px; /* Padding superior/inferior y lateral */
     margin-top: 80px; /* Espacio por encima del footer */
     /* text-align: center;  Quitamos esto del padre para que flexbox lo maneje mejor */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    
 }
 
 
@@ -777,6 +845,16 @@ header {
         font-size: 1rem;
         margin-bottom: 20px;
     }
+
+    /* Back to portfolio */
+    @media (max-width: 768px) {
+  .back-to-portfolio-container {
+    padding: 15px 1rem 0;
+  }
+  
+  .back-to-portfolio {
+    font-size: 1rem;
+  }
 
     /* Projects Section (Cards) */
     .project-grid {
@@ -891,6 +969,12 @@ header {
 
 /* Responsive para el footer */
 @media (max-width: 768px) {
+    
+    footer, #footer {
+        padding: 30px 15px;
+        margin-top: 60px;
+    }
+    
     .footer-content {
         gap: 15px; /* Menos espacio entre secciones en móvil */
     }
@@ -912,4 +996,23 @@ header {
     }
 }
 
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 4rem; /* Ajuste móvil */
+  }
+
+  .hero-content, .image-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .project-card a .project-title {
+    font-size: 1.4rem;
+  }
 }

@@ -55,9 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 
-
-  
-  
   // Filter projects based on profile
   function filterProjects(profile) {
   const projectCards = document.querySelectorAll('.project-card');
@@ -116,4 +113,10 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initialize projects based on default profile
   filterProjects(currentProfile);
 });
+
+// back to top
+document.querySelector('.back-to-top-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
