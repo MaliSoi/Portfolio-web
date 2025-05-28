@@ -1,97 +1,157 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Epicurean Escape</title>
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- CSS path to be relative from subfolder -->
+  <link rel="stylesheet" href="../../css/styles.css">
+
 </head>
+
 <body>
-  <header>
+
+  <!-- Header - Same as your main page -->
+  <header class="fade-element">
     <nav class="navbar">
-      <div class="logo">Malala Soifer</div>
-      <a href="/Index.html" class="back-to-portfolio"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../images/LOGO NUEVO_semibold_gris.png" alt="Malala Soifer Logo">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../index.html#projects">Projects</a></li>
+        <li><a href="../../index.html#skills">Skills</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+      <button id="profile-toggle" class="profile-toggle">Textile design</button>
     </nav>
   </header>
 
+  <!-- Back to Portfolio Link -->
+  <div class="back-to-portfolio-container fade-element">
+    <a href="../../index.html" class="back-to-portfolio-link" aria-label="Back to portfolio">
+      <svg xmlns="http://www.w3.org/2000/svg" class="arrow-left-icon" width="28" height="28" viewBox="0 0 24 24"
+        fill="none" stroke="rgba(60, 60, 60, 0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+      <span class="back-to-portfolio-text">Back to portfolio</span>
+    </a>
+  </div>
+
+  <!-- Add main tag at the beginning -->
   <main>
-    <article class="project-detail">
-      <div class="project-header">
-        <h1>Architecture Website design</h1>
-        
-        <div class="project-metadata">
-          <div class="metadata-item">
-            <span class="metadata-label">Category</span>
-            <span class="metadata-value">UX/UI Design</span>
-          </div>
-          <div class="metadata-item">
-            <span class="metadata-label">Timeline</span>
-            <span class="metadata-value">3 months, 2024</span>
-          </div>
-          <div class="metadata-item">
-            <span class="metadata-label">Role</span>
-            <span class="metadata-value">Lead Designer</span>
+
+
+    <div class="project-container">
+      <section class="project-header">
+        <h1 class="project-title">Arquitecture website design</h1>
+
+        <div class="project-brief">
+          <h2>Brief</h2>
+          <p> Arquitecture website design<br>
+            <b>Arquitecture website design</b> is a unique website Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Aliquam eveniet delectus fugiat qui voluptatem omnis, aperiam, accusantium incidunt libero iusto
+            voluptate architecto, voluptates ipsam cumque nulla obcaecati harum similique soluta.
+            Exercitationem quos similique accusantium numquam sed nostrum voluptate magni enim nihil debitis minus,
+            fugiat placeat consequatur, maiores quisquam. Adipisci sunt repellendus unde voluptatibus ipsa nulla maxime
+            nisi! Quos, ipsam error!
+          </p>
+
+          <div class="project-ficha">
+            <div><strong>Timeline:</strong> 4 months</div>
+            <div><strong>Service:</strong> UX/UI - web design </div>
+            <div><strong>Role:</strong> Principal Designer</div>
+            <div><strong>Tools:</strong> Figma, Funneltopia, Photoshop, Illustrator, Canva </div>
           </div>
         </div>
-        
-        <p class="project-description">
-          This is a comprehensive description of your project. Describe the challenge, 
-          your approach, the process you followed, and the final outcome. Make it detailed 
-          enough to give visitors a clear understanding of what the project entailed and 
-          your specific contributions.
-        </p>
-      </div>
-      
-      <img src="../images/thumbnail.jpg" alt="Project Main Image" class="project-main-image">
-      
-      <section class="project-content-section">
-        <h2>The Challenge</h2>
-        <p>Explain the problem you were trying to solve or the opportunity you identified. 
+      </section>
+    </div>
+
+    <div class="project-media">
+      <!-- FIXED: Updated image path to be relative -->
+      <img src="../../images/thumbnail.jpg" alt="Proyecto 4" />
+    </div>
+
+       <div>
+      <section class="project-challenge">
+      <h2>The Challenge</h2>
+      <p>Explain the problem you were trying to solve or the opportunity you identified.
         What were the constraints? Who were the users? What were their needs?</p>
       </section>
-      
-      <section class="project-content-section">
-        <h2>The Process</h2>
-        <p>Outline your design process. What research did you conduct? How did you 
+      </div>
+
+      <section class="project-process">
+      <h2>The Process</h2>
+      <p>Outline your design process. What research did you conduct? How did you
         approach the problem? What design decisions did you make along the way?</p>
-        
-        <div class="project-gallery">
-          <img src="../images/placeholder.jpg" alt="Research Phase" />
-          <img src="../images/placeholder.jpg" alt="Wireframes" />
-          <img src="../images/placeholder.jpg" alt="User Testing" class="full-width-image" />
+      </section>
+
+
+      <section class="project-gallery">
+        <h2>Galería</h2>
+        <div class="gallery-grid">
+          <!-- FIXED: Updated all image paths to be relative -->
+          <img src="../../images/thumbnail.jpg" alt="Imagen 1" />
+          <img src="../../images/thumbnail.jpg" alt="Imagen 2" />
+          <img src="../../images/thumbnail.jpg" alt="Imagen 3" />
+          <img src="../../images/thumbnail.jpg" alt="Imagen 4" />
         </div>
       </section>
-      
-      <section class="project-content-section">
+
+    <section class="project-result">
         <h2>The Solution</h2>
-        <p>Describe your final design solution in detail. How does it address the initial 
+      <p>Describe your final design solution in detail. How does it address the initial
         challenge? What features did you implement and why?</p>
-        
-        <div class="project-gallery">
-          <img src="../images/placeholder.jpg" alt="Final Design - Screen 1" />
-          <img src="../images/placeholder.jpg" alt="Final Design - Screen 2" />
-        </div>
-      </section>
-      
-      <section class="project-content-section">
-        <h2>Outcomes & Learnings</h2>
-        <p>What were the results of your project? Did it achieve its goals? What did you 
+    </section>
+
+     <div class="project-media">
+      <img src="../../images/thumbnail.jpg" alt="Proyecto 4" />
+      </div>
+
+    <section class="project-learnings">
+      <h2>Outcomes & Learnings</h2>
+      <p>What were the results of your project? Did it achieve its goals? What did you
         learn from the process? What would you do differently next time?</p>
       </section>
-      
-      <div class="project-links">
-        <a href="https://www.behance.net/your-project" target="_blank" class="ver-proyecto-link">
-          <i class="fab fa-behance"></i> View on Behance
-        </a>
-      </div>
-    </article>
+
+    <!-- Footer with proper structure -->
+  
+ <footer class="fade-element" id="footer">
+        <div class="footer-content">
+           <!-- FIXED: Updated navigation links to go back to main page sections -->
+        <ul class="footer-nav-links">
+          <li><a href="../../Index.html#about">About</a></li>
+          <li><a href="../../Index.html#projects">Projects</a></li>
+          <li><a href="../../Index.html#skills">Skills</a></li>
+          <li><a href="../../Index.html#contact">Contact</a></li>
+        </ul>
+            
+        <ul class="footer-social-links">
+                <li><a href="https://www.behance.net/tu_usuario" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/tu_usuario" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="mailto:malalasoifer@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+
+            <div class="footer-copyright">
+                <p>&copy; 2025 Malala Soifer. All rights reserved.</p>
+                <p>Designed & Developed by Malala Soifer.</p>
+            </div>
+        </div>
+    </footer>
+
+
   </main>
 
-  <footer>
-    <p>© 2025 Malala Soifer. All rights reserved.</p>
-  </footer>
 
-  <script src="../script.js"></script>
+  <!-- FIXED: Updated script path to be relative -->
+  <script src="../../js/script.js"></script>
+
 </body>
+
 </html>

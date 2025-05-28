@@ -740,7 +740,7 @@ header {
 footer, #footer {
     background-color: #1d2022; /* Color de fondo oscuro */
     color: #fcfaf7; /* Texto claro */
-    padding: 40px 20px; /* Padding superior/inferior y lateral */
+    padding: 40px 0; /* Padding superior/inferior y lateral */
     margin-top: 80px; /* Espacio por encima del footer */
     /* text-align: center;  Quitamos esto del padre para que flexbox lo maneje mejor */
     position: relative;
