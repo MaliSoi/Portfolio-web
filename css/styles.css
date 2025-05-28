@@ -741,9 +741,7 @@ footer, #footer {
     margin-left: -50vw;
     margin-right: -50vw;
     width: 100vw;
-    
-}
-
+    }
 
 .footer-content {
     display: flex;
@@ -817,10 +815,6 @@ footer, #footer {
     margin: 5px 0; /* Espacio entre las líneas de copyright */
 }
 
-
-
-
-
 /* ========================================================================= */
 /* --- RESPONSIVE STYLES --- */
 /* ========================================================================= */
@@ -845,6 +839,7 @@ footer, #footer {
         font-size: 1rem;
         margin-bottom: 20px;
     }
+}
 
     /* Back to portfolio */
     @media (max-width: 768px) {
@@ -898,7 +893,7 @@ footer, #footer {
         font-size: 1rem;
     }
 
-
+    }
 
 /* Responsive para Skills */
 @media (max-width: 768px) {
@@ -994,8 +989,6 @@ footer, #footer {
     .footer-social-links li a {
         font-size: 1.3rem; /* Reduce el tamaño de los iconos en móvil */
     }
-}
-
 }
 
 @media (max-width: 768px) {
