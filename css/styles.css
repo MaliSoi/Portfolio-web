@@ -405,6 +405,11 @@ header {
     display: none !important;
 }
 
+
+.card-1 {
+  background-color: #eeeeee; 
+}
+
 /* ========================================================================= */
 /* --- PROJECT DETAIL PAGE TEMPLATE --- */
 /* ========================================================================= */
@@ -546,6 +551,11 @@ header {
     transform: scale(1.02);
 }
 
+.project-media {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
 
 .project-challenge,
 .project-gallery,
@@ -600,6 +610,21 @@ header {
 .full-width-image {
     grid-column: 1 / -1;
 }
+
+/* Video */
+.project-video {
+  width: 80%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 4rem auto 2rem auto; /* ↑ más espacio arriba */
+  border-radius: 12px; /* un poco más redondeado, elegante */
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* sombra más suave y amplia */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
 
 
 /* Cambia el color del fondo del overlay */
