@@ -3,7 +3,8 @@
 /* ========================================================================= */
 
 body {
-    font-family: "Work Sans", sans-serif; /* Work Sans como fuente principal para el body */
+    font-family: "Work Sans", sans-serif;
+    /* Work Sans como fuente principal para el body */
     margin: 0;
     padding: 0;
     background-color: #fcfaf7;
@@ -15,23 +16,29 @@ body {
 main {
     background-color: #fcfaf7;
     min-height: 100vh;
-    padding: 20px; /* Consolidado para evitar duplicados */
+    padding: 20px;
+    /* Consolidado para evitar duplicados */
 }
 
 section {
     margin-bottom: 50px;
 }
 
+
 /* Links Globales - Importante para evitar que el color del link sobreescriba */
 /* Esto asegura que los links hereden el color de su padre a menos que se especifique lo contrario */
 a {
-    text-decoration: none; /* Elimina el subrayado por defecto */
-    color: inherit; /* Hereda el color del texto del elemento padre */
-    transition: color 0.3s ease; /* Transición para cambios de color */
+    text-decoration: none;
+    /* Elimina el subrayado por defecto */
+    color: inherit;
+    /* Hereda el color del texto del elemento padre */
+    transition: color 0.3s ease;
+    /* Transición para cambios de color */
 }
 
 a:hover {
-    color: #007bff; /* Color por defecto de hover para los enlaces, puedes ajustarlo */
+    color: #007bff;
+    /* Color por defecto de hover para los enlaces, puedes ajustarlo */
 }
 
 
@@ -46,42 +53,43 @@ a:hover {
 }
 
 /* Cuando el elemento entra en el viewport, se le aplica fade-in */
-.fade-element.fade-in { /* Más específico que solo .fade-in */
+.fade-element.fade-in {
+    /* Más específico que solo .fade-in */
     opacity: 1;
 }
 
 /* Back to portfolio */
 .back-to-portfolio-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 1rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 1rem 0;
 }
 
 .back-to-portfolio-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(60, 60, 60, 0.5);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  opacity: 0.7;
-  transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(60, 60, 60, 0.5);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    opacity: 0.7;
+    transition: color 0.3s ease;
 }
 
 .back-to-portfolio-link:hover {
-  color: rgba(30, 30, 30, 0.7);
+    color: rgba(30, 30, 30, 0.7);
 }
 
 .arrow-left-icon {
-  stroke: currentColor;
-  width: 50px;
-  height: 50px;
-  transition: stroke 0.3s ease;
+    stroke: currentColor;
+    width: 50px;
+    height: 50px;
+    transition: stroke 0.3s ease;
 }
 
 .back-to-portfolio-text {
-  font-size: 1.4rem;
+    font-size: 1.4rem;
 }
 
 
@@ -91,42 +99,53 @@ a:hover {
 header {
     position: sticky;
     top: 0;
-    z-index: 1000; /* Asegúrate de que el header esté por encima del contenido */
+    z-index: 1000;
+    /* Asegúrate de que el header esté por encima del contenido */
     background-color: #fcfaf7;
     color: #1d2022;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para un efecto visual */
-    padding: 10px 0px; /* Ajusta el padding según lo necesario */
-    width: 100%; /* Asegura que el header ocupe todo el ancho de la pantalla */
-    }
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra para un efecto visual */
+    padding: 10px 0px;
+    /* Ajusta el padding según lo necesario */
+    width: 100%;
+    /* Asegura que el header ocupe todo el ancho de la pantalla */
+}
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 0 20px;
 }
 
 .logo {
-    line-height: 0; /* Esto ayuda a eliminar espacio extra debajo de las imágenes */
+    line-height: 0;
+    /* Esto ayuda a eliminar espacio extra debajo de las imágenes */
 }
 
 /* Estilos para la imagen del logo dentro de .logo */
 .logo img {
-    height: 40px; /* <-- **CLAVE:** Define un tamaño fijo para tu logo. AJUSTA ESTE VALOR. */
+    height: 40px;
+    /* <-- **CLAVE:** Define un tamaño fijo para tu logo. AJUSTA ESTE VALOR. */
     font-weight: 600;
-    width: auto; /* Mantiene la proporción original de la imagen */
-    display: block; /* Asegura que no haya espacio extra debajo de la imagen */
-    vertical-align: middle; /* Por si el logo tiene texto al lado */
+    width: auto;
+    /* Mantiene la proporción original de la imagen */
+    display: block;
+    /* Asegura que no haya espacio extra debajo de la imagen */
+    vertical-align: middle;
+    /* Por si el logo tiene texto al lado */
 }
 
 
 .nav-links {
     list-style: none;
     display: flex;
-    margin: 0; /* Elimina el margen por defecto de la lista */
-    padding: 0; /* Elimina el padding por defecto de la lista */
+    margin: 0;
+    /* Elimina el margen por defecto de la lista */
+    padding: 0;
+    /* Elimina el padding por defecto de la lista */
 }
 
 .nav-links li {
@@ -134,7 +153,8 @@ header {
 }
 
 .nav-links li:last-child {
-    margin-right: 0; /* Elimina el margen del último elemento */
+    margin-right: 0;
+    /* Elimina el margen del último elemento */
 }
 
 .nav-links a {
@@ -144,8 +164,9 @@ header {
     font-size: 1.2rem;
     font-weight: 500;
     display: block;
-    padding: 10px 20px; /* Ajusta el padding para que los enlaces tengan más espacio dentro de su contenedor */
-    font-family: "Manrope", sans-serif; 
+    padding: 10px 20px;
+    /* Ajusta el padding para que los enlaces tengan más espacio dentro de su contenedor */
+    font-family: "Manrope", sans-serif;
 }
 
 /* Profile Toggle Button */
@@ -174,9 +195,12 @@ header {
 }
 
 .profile-toggle:active {
-    background-color: #4d555b; /* Cambia el color al presionar el botón */
-    transform: translateY(0); /* Efecto de "presionar" al hacer clic */
-    box-shadow: none; /* Quita la sombra al presionar */
+    background-color: #4d555b;
+    /* Cambia el color al presionar el botón */
+    transform: translateY(0);
+    /* Efecto de "presionar" al hacer clic */
+    box-shadow: none;
+    /* Quita la sombra al presionar */
 }
 
 /* ========================================================================= */
@@ -200,7 +224,7 @@ header {
 }
 
 .hero-title {
-    font-family: "Manrope", sans-serif; 
+    font-family: "Manrope", sans-serif;
     width: 100%;
     font-size: 8rem;
     font-weight: 800;
@@ -242,7 +266,7 @@ header {
 }
 
 #about h2 {
-    font-family: "Manrope", sans-serif; 
+    font-family: "Manrope", sans-serif;
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: #1d2022;
@@ -265,7 +289,7 @@ header {
 }
 
 #projects h2 {
-    font-family: "Manrope", sans-serif; 
+    font-family: "Manrope", sans-serif;
     max-width: 1000px;
     margin: 80px auto;
     font-size: 2.5rem;
@@ -290,7 +314,8 @@ header {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     aspect-ratio: 4/4;
-    z-index: 1; /* Base z-index for the card */
+    z-index: 1;
+    /* Base z-index for the card */
 }
 
 /* Overlay que aparece al hacer hover sobre la tarjeta */
@@ -298,11 +323,14 @@ header {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Capa oscura translúcida */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Capa oscura translúcida */
     opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: 0; /* Asegura que esté debajo de la imagen y el texto */
-    pointer-events: none; /* Permite que los clics pasen a los elementos subyacentes */
+    z-index: 0;
+    /* Asegura que esté debajo de la imagen y el texto */
+    pointer-events: none;
+    /* Permite que los clics pasen a los elementos subyacentes */
 }
 
 .project-card:hover::after {
@@ -310,33 +338,43 @@ header {
 }
 
 /* Título de la tarjeta (el que está dentro del 'a') */
-.project-card a .project-title { /* ¡Selector más específico para el color! */
-    font-family: "Manrope", sans-serif; 
+.project-card a .project-title {
+    /* ¡Selector más específico para el color! */
+    font-family: "Manrope", sans-serif;
     font-weight: 600;
-    color: #fcfaf7; /* <-- ¡Cambiado a blanco para que se vea sobre el overlay oscuro! */
+    color: #fcfaf7;
+    /* <-- ¡Cambiado a blanco para que se vea sobre el overlay oscuro! */
     font-size: 1.8rem;
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 0 10px;
-    
+
     /* Propiedades de posicionamiento y z-index para visibilidad sobre overlay */
-    position: absolute; /* Posiciona el título sobre la card */
+    position: absolute;
+    /* Posiciona el título sobre la card */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centra el título */
-    z-index: 2; /* Más alto que el overlay y la imagen */
-    width: 100%; /* Para que el text-align center funcione bien */
-    box-sizing: border-box; /* Para que el padding no desborde */
+    transform: translate(-50%, -50%);
+    /* Centra el título */
+    z-index: 2;
+    /* Más alto que el overlay y la imagen */
+    width: 100%;
+    /* Para que el text-align center funcione bien */
+    box-sizing: border-box;
+    /* Para que el padding no desborde */
 
     /* Control de visibilidad para cuando la tarjeta no tiene hover */
-    opacity: 0; /* Inicialmente oculto para que aparezca con el hover */
-    transition: opacity 0.3s ease; /* Transición suave para la aparición */
+    opacity: 0;
+    /* Inicialmente oculto para que aparezca con el hover */
+    transition: opacity 0.3s ease;
+    /* Transición suave para la aparición */
 }
 
 /* Hace que el título aparezca cuando se hace hover sobre la tarjeta */
 .project-card:hover .project-title {
-    opacity: 1; /* Título visible al hacer hover sobre la card */
+    opacity: 1;
+    /* Título visible al hacer hover sobre la card */
 }
 
 /* Contenedor de la imagen dentro de la tarjeta */
@@ -346,14 +384,16 @@ header {
     height: 100%;
     overflow: hidden;
     display: block;
-    z-index: 1; /* Asegura que el contenedor de la imagen esté sobre el after */
+    z-index: 1;
+    /* Asegura que el contenedor de la imagen esté sobre el after */
 }
 
 /* La imagen real */
 .project-image {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Cambiado a cover para que la imagen ocupe todo el espacio */
+    object-fit: contain;
+    /* Cambiado a cover para que la imagen ocupe todo el espacio */
     transition: transform 0.5s ease;
 }
 
@@ -379,7 +419,8 @@ header {
 
 .project-container {
     max-width: 1200px;
-    margin: 0 auto; /* Centra el contenedor principal */
+    margin: 0 auto;
+    /* Centra el contenedor principal */
     padding: 1rem;
     font-family: Arial, sans-serif;
     color: #222;
@@ -388,75 +429,98 @@ header {
 
 /* Header: título a la izquierda, brief a la derecha */
 .project-header {
-    display: flex; /* Habilita Flexbox para organizar los hijos */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-    justify-content: space-between; /* Empuja el título a la izquierda y el brief a la derecha */
-    gap: 2rem; /* Espacio entre el título y el brief */
+    display: flex;
+    /* Habilita Flexbox para organizar los hijos */
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: space-between;
+    /* Empuja el título a la izquierda y el brief a la derecha */
+    gap: 2rem;
+    /* Espacio entre el título y el brief */
     margin-bottom: 2rem;
-    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+    align-items: flex-start;
+    /* Alinea los elementos al inicio (arriba) */
     /* Añadido padding horizontal para que el contenido no toque los bordes */
-    padding: 0 1rem; 
+    padding: 0 1rem;
 }
 
 /* Título de la página de detalle (el H1 grande) */
-.project-container .project-header .project-title  {
-    font-family: "Manrope", sans-serif; 
+.project-container .project-header .project-title {
+    font-family: "Manrope", sans-serif;
     font-weight: 700;
     color: #1d2022;
-    font-size: 2.8rem; /* El tamaño de la captura */
+    font-size: 2.8rem;
+    /* El tamaño de la captura */
     text-align: left;
     margin-top: 4rem;
     margin-bottom: 2rem;
     padding: 0;
-    position: static; /* Asegura que se comporte normalmente */
+    position: static;
+    /* Asegura que se comporte normalmente */
     z-index: auto;
 
-    flex: 1 1 50%; /* Permite que crezca/encoga, base del 50% */
-    max-width: 40%; /* Limita el ancho máximo para el título */
-    min-width: 300px; /* Asegura que el título no sea demasiado pequeño en pantallas intermedias */
-    box-sizing: border-box; /* Para que el padding no afecte el ancho total */
-    padding-right: 1rem; /* Margen interno a la derecha para separar del brief */
+    flex: 1 1 50%;
+    /* Permite que crezca/encoga, base del 50% */
+    max-width: 40%;
+    /* Limita el ancho máximo para el título */
+    min-width: 300px;
+    /* Asegura que el título no sea demasiado pequeño en pantallas intermedias */
+    box-sizing: border-box;
+    /* Para que el padding no afecte el ancho total */
+    padding-right: 1rem;
+    /* Margen interno a la derecha para separar del brief */
 }
 
 /* Brief ocupa otra parte del ancho (derecha) */
 .project-brief {
-    flex: 1 1 45%; /* Permite que crezca/encoga, base del 45% (un poco menos que el título para el gap) */
-    text-align: left; /* Alinea el texto a la izquierda dentro del brief */
-    margin-top: 3rem; /* Alinea su parte superior con el título */
+    flex: 1 1 45%;
+    /* Permite que crezca/encoga, base del 45% (un poco menos que el título para el gap) */
+    text-align: left;
+    /* Alinea el texto a la izquierda dentro del brief */
+    margin-top: 3rem;
+    /* Alinea su parte superior con el título */
     box-sizing: border-box;
-    padding-left: 6rem; /* Margen interno a la izquierda para separar del título */
+    padding-left: 6rem;
+    /* Margen interno a la izquierda para separar del título */
 }
 
-.project-brief h2 { /* Estilo para el "Brief" h2 */
-    font-family: "Manrope", sans-serif; 
-    font-size: 2rem; /* Ajusta el tamaño si es necesario */
-    margin-bottom: 0.8rem; /* Espacio debajo del título del brief */
+.project-brief h2 {
+    /* Estilo para el "Brief" h2 */
+    font-family: "Manrope", sans-serif;
+    font-size: 2rem;
+    /* Ajusta el tamaño si es necesario */
+    margin-bottom: 0.8rem;
+    /* Espacio debajo del título del brief */
     color: #1d2022;
 }
 
 .project-brief p {
     font-size: 1.6rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem; /* Espacio debajo del párrafo del brief */
-    color: #4d555b; /* Un color de texto más suave */
+    margin-bottom: 1.5rem;
+    /* Espacio debajo del párrafo del brief */
+    color: #4d555b;
+    /* Un color de texto más suave */
 }
 
 
 /* Ficha dentro del brief */
 .project-ficha {
-    margin-top: 2rem; /* Margen superior para separarlo del párrafo del brief */
+    margin-top: 2rem;
+    /* Margen superior para separarlo del párrafo del brief */
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
 }
 
-.project-ficha > div {
+.project-ficha>div {
     flex: 1 1 120px;
     background: #f5f5f5;
     padding: 0.5rem;
     border-radius: 6px;
     font-size: 1.3rem;
-    color: #222; /* Color para el texto dentro de la ficha */
+    color: #222;
+    /* Color para el texto dentro de la ficha */
 }
 
 
@@ -470,9 +534,18 @@ header {
     margin-left: auto;
     margin-right: auto;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añadido aquí */
-    transition: transform 0.3s ease; /* Añadido aquí */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Añadido aquí */
+    transition: transform 0.3s ease;
+    /* Añadido aquí */
+   
 }
+
+.project-media img:hover {
+    /* Efecto de hover para las imágenes de galería */
+    transform: scale(1.02);
+}
+
 
 .project-challenge,
 .project-gallery,
@@ -480,11 +553,13 @@ header {
 .project-content-section,
 .project-process,
 .project-learnings,
-.project-contribution { /* Consolidado para evitar duplicados */
+.project-contribution {
+    /* Consolidado para evitar duplicados */
     line-height: 1.6;
     font-size: 1.6rem;
     margin-top: 10%;
-    margin-bottom: 60px; /* Usar el valor mayor de los dos */
+    margin-bottom: 60px;
+    /* Usar el valor mayor de los dos */
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -492,7 +567,7 @@ header {
 }
 
 .project-content-section h2 {
-    font-family: "Manrope", sans-serif; 
+    font-family: "Manrope", sans-serif;
     font-size: 2rem;
     margin-bottom: 20px;
     font-weight: 600;
@@ -510,16 +585,26 @@ header {
     border-radius: 6px;
     height: auto;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añadido aquí */
-    transition: transform 0.3s ease; /* Añadido aquí */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Añadido aquí */
+    transition: transform 0.3s ease;
+    /* Añadido aquí */
 }
 
-.gallery-grid img:hover { /* Efecto de hover para las imágenes de galería */
+.gallery-grid img:hover {
+    /* Efecto de hover para las imágenes de galería */
     transform: scale(1.02);
 }
 
+
 .full-width-image {
     grid-column: 1 / -1;
+}
+
+
+/* Cambia el color del fondo del overlay */
+.lb-overlay {
+    background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
 .back-to-portfolio {
@@ -552,21 +637,24 @@ header {
 }
 
 .ver-proyecto-link:hover {
-    background-color: #4d555b; /* Ajustado el color de hover para este botón */
+    background-color: #4d555b;
+    /* Ajustado el color de hover para este botón */
     transform: translateY(-2px);
 }
 
 /* ========================================================================= */
 /* --- SKILLS SECTION --- */
 /* ========================================================================= */
-#skills { /* ¡Ajustado a #skills! */
+#skills {
+    /* ¡Ajustado a #skills! */
     max-width: 1000px;
     margin: 80px auto;
     padding: 2% 2%;
     text-align: center;
 }
 
-#skills h2 { /* ¡Ajustado a #skills! */
+#skills h2 {
+    /* ¡Ajustado a #skills! */
     font-family: "Manrope", sans-serif;
     font-size: 2.5rem;
     margin-bottom: 40px;
@@ -606,10 +694,12 @@ header {
 /* --- CONTACT SECTION --- */
 /* ========================================================================= */
 #contact {
-    max-width: 700px; /* Un poco más estrecho para el formulario */
+    max-width: 700px;
+    /* Un poco más estrecho para el formulario */
     margin: 80px auto;
     padding: 2% 2%;
-    text-align: center; /* Centra el contenido general de la sección */
+    text-align: center;
+    /* Centra el contenido general de la sección */
 }
 
 #contact h2 {
@@ -617,64 +707,85 @@ header {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #1d2022;
-    text-align: center; /* Asegura que el título H2 esté centrado */
+    text-align: center;
+    /* Asegura que el título H2 esté centrado */
 }
 
 #contact p {
     font-size: 1.3rem;
     line-height: 1.6;
-    color: #4d555b; /* Un color de texto un poco más suave para los párrafos */
+    color: #4d555b;
+    /* Un color de texto un poco más suave para los párrafos */
     margin-bottom: 25px;
 }
 
 #contact p a {
-    color: #1d2022; /* Color de link más oscuro para contraste */
-    font-weight: 600; /* Hace los links más destacados */
+    color: #1d2022;
+    /* Color de link más oscuro para contraste */
+    font-weight: 600;
+    /* Hace los links más destacados */
 }
 
 #contact p a:hover {
-    color: #007bff; /* Mantiene el hover global, o puedes elegir uno específico */
-    text-decoration: underline; /* Agrega un subrayado al hover para más feedback */
+    color: #007bff;
+    /* Mantiene el hover global, o puedes elegir uno específico */
+    text-decoration: underline;
+    /* Agrega un subrayado al hover para más feedback */
 }
 
 /* Estilos del Formulario */
 #contact-form {
     display: flex;
-    flex-direction: column; /* Apila los elementos del formulario */
-    gap: 20px; /* Espacio entre los campos */
-    margin-top: 40px; /* Margen superior para separar del texto */
-    text-align: left; /* Alinea los inputs y el botón a la izquierda dentro del formulario */
+    flex-direction: column;
+    /* Apila los elementos del formulario */
+    gap: 20px;
+    /* Espacio entre los campos */
+    margin-top: 40px;
+    /* Margen superior para separar del texto */
+    text-align: left;
+    /* Alinea los inputs y el botón a la izquierda dentro del formulario */
 }
 
 #contact-form input[type="text"],
 #contact-form input[type="email"],
 #contact-form textarea {
-    width: 100%; /* Ocupa todo el ancho disponible del contenedor del formulario */
+    width: 100%;
+    /* Ocupa todo el ancho disponible del contenedor del formulario */
     padding: 15px;
-    border: 1px solid #cccccc; /* Borde suave */
-    border-radius: 8px; /* Bordes ligeramente redondeados */
+    border: 1px solid #cccccc;
+    /* Borde suave */
+    border-radius: 8px;
+    /* Bordes ligeramente redondeados */
     font-family: "Work Sans", sans-serif;
     font-size: 1.1rem;
     color: #1d2022;
-    background-color: #fcfaf7; /* Coherente con el fondo */
+    background-color: #fcfaf7;
+    /* Coherente con el fondo */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #contact-form input:focus,
 #contact-form textarea:focus {
-    border-color: #007bff; /* Borde azul al enfocar */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Sombra sutil al enfocar */
-    outline: none; /* Elimina el contorno por defecto del navegador */
+    border-color: #007bff;
+    /* Borde azul al enfocar */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    /* Sombra sutil al enfocar */
+    outline: none;
+    /* Elimina el contorno por defecto del navegador */
 }
 
 #contact-form textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
-    min-height: 120px; /* Altura mínima del área de texto */
+    resize: vertical;
+    /* Permite redimensionar verticalmente */
+    min-height: 120px;
+    /* Altura mínima del área de texto */
 }
 
 #contact-form button[type="submit"] {
-    background-color: #1d2022; /* Fondo oscuro, coherente con tus botones */
-    color: #fcfaf7; /* Texto claro */
+    background-color: #1d2022;
+    /* Fondo oscuro, coherente con tus botones */
+    color: #fcfaf7;
+    /* Texto claro */
     padding: 15px 30px;
     border: none;
     border-radius: 25px;
@@ -682,12 +793,15 @@ header {
     font-size: 1.2rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    align-self: center; /* Centra el botón si es de ancho variable */
-    max-width: 200px; /* O un ancho fijo para el botón */
+    align-self: center;
+    /* Centra el botón si es de ancho variable */
+    max-width: 200px;
+    /* O un ancho fijo para el botón */
 }
 
 #contact-form button[type="submit"]:hover {
-    background-color: #4d555b; /* Color de hover */
+    background-color: #4d555b;
+    /* Color de hover */
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -702,46 +816,113 @@ header {
 /*back to top*/
 
 .back-to-top-section {
-  display: flex;
-  justify-content: center;
-  margin: 60px 0 40px;
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 40px;
 }
 
 .back-to-top-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: rgba(60, 60, 60, 0.5);
-  transition: color 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    /* de columna a fila para alineación horizontal */
+    align-items: center;
+    text-decoration: none;
+    color: rgba(60, 60, 60, 0.6);
+    gap: 6px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
 }
 
 .back-to-top-link:hover {
-  color: rgba(30, 30, 30, 0.7);
-}
-
-.arrow-icon {
-  stroke: currentColor;
-  width: 50px;
-  height: 50px;
-  transition: stroke 0.3s ease;
+    color: rgba(30, 30, 30, 0.9);
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    box-shadow: none;
 }
 
 .back-to-top-text {
-  margin-top: 8px;
-  font-size: 1.4rem;
+    margin: 0;
+    user-select: none;
 }
 
+.arrow-icon {
+    stroke: currentColor;
+    width: 24px;
+    /* antes 50px, ahora 24px */
+    height: 24px;
+    transition: stroke 0.3s ease;
+    user-select: none;
+}
+
+/* === PREVIOUS / NEXT PROJECT STYLES === */
+.project-navigation-section {
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye los 3 items en los extremos y centro */
+    align-items: center;
+    margin: 80px auto 60px;
+    /* centrado horizontal con margen */
+    max-width: 1200px;
+    /* ancho máximo para controlar la separación */
+    padding: 0 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #444;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: rgba(60, 60, 60, 0.7);
+    font-size: 1.15rem;
+    transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.nav-link:hover {
+    color: rgba(30, 30, 30, 0.9);
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    box-shadow: none;
+}
+
+.nav-text {
+    display: inline-block;
+}
+
+.rotate-left {
+    transform: rotate(-90deg);
+    /* flecha izquierda */
+}
+
+.rotate-right {
+    transform: rotate(90deg);
+    /* flecha derecha */
+}
 
 /* ========================================================================= */
 /* --- FOOTER --- */
 /* ========================================================================= */
 
-footer, #footer {
-    background-color: #1d2022; /* Color de fondo oscuro */
-    color: #fcfaf7; /* Texto claro */
-    padding: 40px 0; /* Padding superior/inferior y lateral */
-    margin-top: 80px; /* Espacio por encima del footer */
+footer,
+#footer {
+    background-color: #1d2022;
+    /* Color de fondo oscuro */
+    color: #fcfaf7;
+    /* Texto claro */
+    padding: 40px 0;
+    /* Padding superior/inferior y lateral */
+    margin-top: 80px;
+    /* Espacio por encima del footer */
     /* text-align: center;  Quitamos esto del padre para que flexbox lo maneje mejor */
     position: relative;
     left: 50%;
@@ -749,24 +930,33 @@ footer, #footer {
     margin-left: -50vw;
     margin-right: -50vw;
     width: 100vw;
-    }
+}
 
 .footer-content {
     display: flex;
-    flex-direction: column; /* Apila los elementos principales: copyright, nav, social */
-    align-items: center; /* Centra horizontalmente los elementos apilados */
-    max-width: 1000px; /* Mismo ancho que tu contenido principal */
-    margin: 0 auto; /* Centra el contenedor del footer */
-    gap: 20px; /* Espacio entre el copyright, nav y social */
+    flex-direction: column;
+    /* Apila los elementos principales: copyright, nav, social */
+    align-items: center;
+    /* Centra horizontalmente los elementos apilados */
+    max-width: 1000px;
+    /* Mismo ancho que tu contenido principal */
+    margin: 0 auto;
+    /* Centra el contenedor del footer */
+    gap: 20px;
+    /* Espacio entre el copyright, nav y social */
     list-style: none;
 }
 
 
 .footer-section {
-    flex: 1; /* Permite que las secciones crezcan y se encojan */
-    min-width: 180px; /* Ancho mínimo antes de que se envuelvan */
-    margin: 20px; /* Espacio entre las secciones */
-    text-align: left; /* Alinea el texto a la izquierda dentro de cada sección */
+    flex: 1;
+    /* Permite que las secciones crezcan y se encojan */
+    min-width: 180px;
+    /* Ancho mínimo antes de que se envuelvan */
+    margin: 20px;
+    /* Espacio entre las secciones */
+    text-align: left;
+    /* Alinea el texto a la izquierda dentro de cada sección */
 }
 
 /* Estilos para los enlaces de navegación */
@@ -774,21 +964,27 @@ footer, #footer {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Para que los enlaces estén en una línea */
-    justify-content: center; /* Centra los enlaces de navegación */
-    flex-wrap: wrap; /* Permite que los enlaces se envuelvan si no hay espacio */
-    gap: 25px; /* Espacio entre cada enlace de navegación */
+    display: flex;
+    /* Para que los enlaces estén en una línea */
+    justify-content: center;
+    /* Centra los enlaces de navegación */
+    flex-wrap: wrap;
+    /* Permite que los enlaces se envuelvan si no hay espacio */
+    gap: 25px;
+    /* Espacio entre cada enlace de navegación */
 }
 
 .footer-nav-links li a {
-    color: #fcfaf7; /* Color de los enlaces de navegación */
+    color: #fcfaf7;
+    /* Color de los enlaces de navegación */
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .footer-nav-links li a:hover {
-    color: #007bff; /* Color de acento al pasar el ratón */
+    color: #007bff;
+    /* Color de acento al pasar el ratón */
 }
 
 /* Estilos para los enlaces de redes sociales/contacto */
@@ -796,50 +992,62 @@ footer, #footer {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Para que los iconos estén en una línea */
-    justify-content: center; /* Centra los iconos de redes sociales */
-    flex-wrap: wrap; /* Permite que los iconos se envuelvan si no hay espacio */
-    gap: 25px; /* Espacio entre cada icono social */
+    display: flex;
+    /* Para que los iconos estén en una línea */
+    justify-content: center;
+    /* Centra los iconos de redes sociales */
+    flex-wrap: wrap;
+    /* Permite que los iconos se envuelvan si no hay espacio */
+    gap: 25px;
+    /* Espacio entre cada icono social */
 }
 
 .footer-social-links li a {
-    color: #fcfaf7; /* Color de los iconos sociales */
-    font-size: 1.6rem; /* Tamaño de los iconos, ajusta a tu gusto */
+    color: #fcfaf7;
+    /* Color de los iconos sociales */
+    font-size: 1.6rem;
+    /* Tamaño de los iconos, ajusta a tu gusto */
     transition: color 0.3s ease;
 }
 
 .footer-social-links li a:hover {
-    color: #007bff; /* Color de acento al pasar el ratón */
+    color: #007bff;
+    /* Color de acento al pasar el ratón */
 }
 
 
 .footer-copyright {
-     text-align: center;
+    text-align: center;
     font-size: 0.85rem;
-    color: #888; /* Un color más tenue para el copyright */
+    color: #888;
+    /* Un color más tenue para el copyright */
 }
 
 .footer-copyright p {
-    margin: 5px 0; /* Espacio entre las líneas de copyright */
+    margin: 5px 0;
+    /* Espacio entre las líneas de copyright */
 }
 
 /* ========================================================================= */
 /* --- RESPONSIVE STYLES --- */
 /* ========================================================================= */
 @media (max-width: 768px) {
+
     /* Hero Section */
     #hero {
         flex-direction: column;
         text-align: center;
     }
 
-    .hero-content, .image-content {
+    .hero-content,
+    .image-content {
         width: 100%;
         text-align: center;
     }
 
     .hero-title {
-        font-size: 4rem; /* Reducir tamaño para móviles */
+        font-size: 4rem;
+        /* Reducir tamaño para móviles */
         letter-spacing: 2px;
     }
 
@@ -849,19 +1057,20 @@ footer, #footer {
     }
 }
 
-    /* Back to portfolio */
-    @media (max-width: 768px) {
-  .back-to-portfolio-container {
-    padding: 15px 1rem 0;
-  }
-  
-  .back-to-portfolio {
-    font-size: 1rem;
-  }
+/* Back to portfolio */
+@media (max-width: 768px) {
+    .back-to-portfolio-container {
+        padding: 15px 1rem 0;
+    }
+
+    .back-to-portfolio {
+        font-size: 1rem;
+    }
 
     /* Projects Section (Cards) */
     .project-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        grid-template-columns: 1fr;
+        /* Una columna en pantallas pequeñas */
         padding: 0 1rem;
     }
 
@@ -872,7 +1081,8 @@ footer, #footer {
 
     .project-container .project-header .project-title {
         flex: none;
-        font-size: 1.8rem; /* Reducir tamaño para móviles */
+        font-size: 1.8rem;
+        /* Reducir tamaño para móviles */
         margin-bottom: 1rem;
     }
 
@@ -901,11 +1111,12 @@ footer, #footer {
         font-size: 1rem;
     }
 
-    }
+}
 
 /* Responsive para Skills */
 @media (max-width: 768px) {
-    #skills h2 { /* ¡Ajustado a #skills! */
+    #skills h2 {
+        /* ¡Ajustado a #skills! */
         font-size: 2rem;
     }
 
@@ -916,38 +1127,51 @@ footer, #footer {
 }
 
 
-    /* Ajustes Responsivos para la sección de detalle del proyecto */
+/* Ajustes Responsivos para la sección de detalle del proyecto */
 @media (max-width: 768px) {
     .project-header {
-        flex-direction: column; /* Apila los elementos en una columna */
-        align-items: flex-start; /* Alinea al inicio cuando están apilados */
-        padding: 0 1rem; /* Padding para que no toque los bordes */
+        flex-direction: column;
+        /* Apila los elementos en una columna */
+        align-items: flex-start;
+        /* Alinea al inicio cuando están apilados */
+        padding: 0 1rem;
+        /* Padding para que no toque los bordes */
     }
 
     .project-container .project-header .project-title,
     .project-brief {
-        flex: none; /* Deshabilita flex-grow/shrink */
-        width: 100%; /* Ocupa todo el ancho */
-        max-width: none; /* Elimina límite de ancho máximo */
-        padding-left: 0; /* Elimina padding lateral que pusimos para desktop */
+        flex: none;
+        /* Deshabilita flex-grow/shrink */
+        width: 100%;
+        /* Ocupa todo el ancho */
+        max-width: none;
+        /* Elimina límite de ancho máximo */
+        padding-left: 0;
+        /* Elimina padding lateral que pusimos para desktop */
         padding-right: 0;
-        margin-top: 1rem; /* Ajusta márgenes para que se vean bien apilados */
+        margin-top: 1rem;
+        /* Ajusta márgenes para que se vean bien apilados */
         margin-bottom: 1rem;
         box-sizing: border-box;
     }
 
     .project-container .project-header .project-title {
-        font-size: 1.8rem; /* Reducir tamaño para móviles */
-        text-align: left; /* Mantener la alineación a la izquierda */
-        margin-top: 2rem; /* Margen superior para el título */
+        font-size: 1.8rem;
+        /* Reducir tamaño para móviles */
+        text-align: left;
+        /* Mantener la alineación a la izquierda */
+        margin-top: 2rem;
+        /* Margen superior para el título */
     }
 
     .project-brief {
-        margin-top: 1rem; /* Margen para el brief debajo del título */
+        margin-top: 1rem;
+        /* Margen para el brief debajo del título */
     }
 
     .project-ficha {
-        flex-direction: column; /* Apila los elementos de la ficha */
+        flex-direction: column;
+        /* Apila los elementos de la ficha */
         gap: 1rem;
     }
 }
@@ -972,18 +1196,21 @@ footer, #footer {
 
 /* Responsive para el footer */
 @media (max-width: 768px) {
-    
-    footer, #footer {
+
+    footer,
+    #footer {
         padding: 30px 15px;
         margin-top: 60px;
     }
-    
+
     .footer-content {
-        gap: 15px; /* Menos espacio entre secciones en móvil */
+        gap: 15px;
+        /* Menos espacio entre secciones en móvil */
     }
 
     .footer-nav-links {
-        gap: 15px; /* Menos espacio entre links de navegación en móvil */
+        gap: 15px;
+        /* Menos espacio entre links de navegación en móvil */
     }
 
     .footer-nav-links li a {
@@ -991,29 +1218,203 @@ footer, #footer {
     }
 
     .footer-social-links {
-        gap: 18px; /* Menos espacio entre iconos sociales en móvil */
+        gap: 18px;
+        /* Menos espacio entre iconos sociales en móvil */
     }
 
     .footer-social-links li a {
-        font-size: 1.3rem; /* Reduce el tamaño de los iconos en móvil */
+        font-size: 1.3rem;
+        /* Reduce el tamaño de los iconos en móvil */
     }
 }
 
 @media (max-width: 768px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .hero-title {
-    font-size: 4rem; /* Ajuste móvil */
-  }
+    .hero-title {
+        font-size: 4rem;
+        /* Ajuste móvil */
+    }
 
-  .hero-content, .image-content {
+    .hero-content,
+    .image-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .project-card a .project-title {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+
+
+/* ========================================================================= */
+/* --- CUSTOM LIGHTBOX STYLES --- */
+/* ========================================================================= */
+
+.custom-lightbox {
+    display: flex;
+    /* Cambiamos a flex para que la transición de opacidad funcione al inicio */
+    position: fixed;
+    z-index: 1000;
+    /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
     width: 100%;
-    text-align: center;
-  }
+    height: 100%;
+    overflow: auto;
+    /* Permite scroll si la imagen es muy grande */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo oscuro semi-transparente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    padding: 20px;
+    box-sizing: border-box;
+    /* Incluye padding en el ancho/alto */
+    opacity: 0;
+    visibility: hidden;
+    /* Oculto visualmente */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    /* Transición para ambos */
+}
 
-  .project-card a .project-title {
-    font-size: 1.4rem;
-  }
+.custom-lightbox.active {
+    opacity: 1;
+    visibility: visible; /* Visible cuando está activo */
+}
+
+.lightbox-content {
+    position: relative;
+    background-color: #fcfaf7;
+    /* Color de fondo del contenido del lightbox */
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    /* Ancho máximo en desktop */
+    max-height: 90%;
+    /* Alto máximo en desktop */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Animación de entrada del contenido */
+    transform: translateY(20px); /* Un poco desplazado hacia abajo */
+    opacity: 0; /* Inicialmente invisible */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Transiciones para el contenido */
+}
+
+.custom-lightbox.active .lightbox-content {
+    transform: translateY(0); /* Vuelve a su posición original */
+    opacity: 1; /* Se vuelve visible */
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 70vh;
+    /* Altura máxima para la imagen dentro del lightbox */
+    display: block;
+    object-fit: contain;
+    /* Asegura que la imagen se ajuste sin cortarse */
+    border-radius: 4px;
+}
+
+.lightbox-title {
+    color: #1d2022;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    text-align: center;
+    word-wrap: break-word;
+    /* Permite que el título se ajuste a la línea */
+    max-width: 100%;
+    /* Asegura que el título no desborde */
+}
+
+/* Estilos para el nuevo botón SVG de cerrar */
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    padding: 5px;
+    color: rgba(60, 60, 60, 0.5); /* Color inicial como tus flechas */
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: flex; /* Para centrar el SVG si tuviera padding */
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-close svg {
+    width: 28px; /* Tamaño del SVG */
+    height: 28px;
+    stroke: currentColor; /* El SVG hereda el color del botón */
+    stroke-width: 1.5; /* Grosor de la línea como tus flechas */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #333;
+    outline: none; /* Elimina el borde de enfoque por defecto si lo deseas */
+}
+
+/* Responsive para el lightbox */
+@media (max-width: 768px) {
+    .lightbox-content {
+        max-width: 95%;
+        /* Más ancho en mobile */
+        padding: 15px;
+    }
+
+    .lightbox-image {
+        max-height: 75vh;
+        /* Puede ocupar un poco más en mobile */
+    }
+
+    .lightbox-close {
+        top: 5px;
+        right: 10px;
+        padding: 0; /* Elimina el padding extra en mobile si no es necesario */
+    }
+
+    .lightbox-close svg {
+        width: 24px; /* Un poco más pequeño en mobile */
+        height: 24px;
+    }
+
+    .lightbox-title {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox-content {
+        padding: 10px;
+    }
+
+    .lightbox-image {
+        max-height: 80vh;
+        /* Aún más espacio para la imagen en pantallas muy pequeñas */
+    }
+
+    .lightbox-close {
+      width: 22px; /* Aún más pequeño en pantallas muy chicas */
+        height: 22px;
+    }
 }

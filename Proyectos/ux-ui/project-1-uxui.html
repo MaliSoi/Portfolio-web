@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../css/styles.css">
   
   
+  
 </head>
 
 <body>
@@ -65,10 +66,9 @@
     </div>
 
     <div class="project-media">
-      <!-- FIXED: Updated image path to be relative -->
-      <img src="../../images/screenshot.jpg" alt="Proyecto 1" />
-      <!--<img src="/images/screenshot.jpg" alt="Proyecto 1" />-->
+    <img src="../../images/screenshot.jpg" alt="Proyecto 1" data-lightbox="single" data-title="Proyecto 1"/>
     </div>
+
 
    
     <section class="project-challenge">
@@ -89,17 +89,20 @@
     <section class="project-gallery">
       <h2>Galería</h2>
       <div class="gallery-grid">
-        <!-- FIXED: Updated all image paths to be relative -->
+        <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 1">
         <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 1" />
-        <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 2" />
-        <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 3" />
-        <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 4" />
-        <!--<img src="/images/Screenshot Portfolio.jpg" alt="Imagen 1" />
-        <img src="/images/Screenshot Portfolio.jpg" alt="Imagen 2" />
-        <img src="/images/Screenshot Portfolio.jpg" alt="Imagen 3" />
-        <img src="/images/Screenshot Portfolio.jpg" alt="Imagen 4" />-->
+        </div>
+       <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 2">
+       <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 2" />
+       </div>
+       <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 3">
+       <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 3" />
+       </div>
+       <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 4">
+       <img src="../../images/Screenshot Portfolio.jpg" alt="Imagen 4" />
+       </div>      
       </div>
-    </section>
+      </section>
 
     <section class="project-result">
       <h2>The Solution</h2>
@@ -109,9 +112,8 @@
     </section>
 
     <div class="project-media">
-      <!-- FIXED: Updated image path to be relative -->
-      <img src="../../images/screenshot.jpg" alt="Proyecto 1" />
-      <!--<img src="/images/screenshot.jpg" alt="Proyecto 1" />-->
+    <div class="project-media">
+        <img src="../../images/screenshot.jpg" alt="Proyecto 1" data-lightbox="single" data-title="Proyecto 1" />
     </div>
 
     <section class="project-learnings">
@@ -121,14 +123,28 @@
         And above all, I’m proud to have built this portfolio from scratch.</p>
     </section>
 
- <!-- back to top -->
+ <!--Previous project| back to top | Next project-->
  
-   <div class="back-to-top-section">
-  <a href="#" class="back-to-top-link" aria-label="Back to top">
-    <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(60, 60, 60, 0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+   <div class="project-navigation-section elegant-clean">
+  <a href="/Proyectos/ux-ui/project-6-uxui.html" class="nav-link">
+    <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon rotate-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+    <span class="nav-text">Previous projects</span>
+  </a>
+
+  <a href="#" class="back-to-top-link" aria-label="Volver arriba">
+    <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon back-to-top-arrow" viewBox="0 0 24 24" fill="none" stroke="rgba(60, 60, 60, 0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
     <span class="back-to-top-text">Back to top</span>
+  </a>
+
+  <a href="/Proyectos/ux-ui/project-2-uxui.html" class="nav-link">
+    <span class="nav-text">Next project </span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon rotate-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
   </a>
 </div>
 
@@ -163,6 +179,20 @@
    <!-- FIXED: Updated script path to be relative -->
   <script src="../../js/script.js"></script>
   
+
+  <!-- Lightbox -->
+  <div id="customLightbox" class="custom-lightbox">
+    <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Cerrar imagen expandida">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+</button>
+        <img src="" alt="Expanded Image" class="lightbox-image">
+        <div class="lightbox-title"></div>
+    </div>
+</div>
 
   </body>
 </html>
