@@ -10,10 +10,7 @@
   <!-- CSS path to be relative from subfolder -->
   <link rel="stylesheet" href="../../css/styles.css">
 
-  <!-- Lightbox2 CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-
-</head>
+  </head>
 
 <body>
 
@@ -71,11 +68,15 @@
       </section>
     </div>
       
-      <div class="project-media">
-      <!-- FIXED: Updated image path to be relative -->
-      <img src="../../images/Thumbnail.png" alt="Proyecto 2" />
-    </div>
-      
+       <!--
+<div class="project-media">
+  <video autoplay muted loop playsinline class="project-video">
+    <source src="../../videos/Video_presentacion.mp4" type="video/mp4">
+    <p class="fallback-text">Este proyecto incluye un video, pero tu navegador no lo puede mostrar.</p>
+  </video>
+</div>
+-->
+
       <div>
         <section class="project-challenge">
           <h2>The Challenge</h2>
@@ -92,28 +93,34 @@
       </section>  
       
 
-
-        <section class="project-gallery">
-        <h2>Galería</h2>
-        <div class="gallery-grid">
-         <!-- FIXED: Updated all image paths to be relative -->
-          <img src="../../images/Thumbnail.png" alt="Imagen 1" />
-          <img src="../../images/Thumbnail.png" alt="Imagen 2" />
-          <img src="../../images/Thumbnail.png" alt="Imagen 3" />
-          <img src="../../images/Thumbnail.png" alt="Imagen 4" />
+    <section class="project-gallery">
+      <h2>Galería</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 1">
+        <img src="../../images/Thumbnail.png" alt="Imagen 1" />
         </div>
+       <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 2">
+       <img src="../../images/Thumbnail.png" alt="Imagen 2" />
+       </div>
+       <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 3">
+       <img src="../../images/Thumbnail.png" alt="Imagen 3" />
+       </div>
+       <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 4">
+       <img src="../../images/Thumbnail.png" alt="Imagen 4" />
+       </div>      
+      </div>
       </section>
- 
+        
       
       <section class="project-result">
         <h2>The Solution</h2>
         <p>Describe your final design solution in detail. How does it address the initial 
         challenge? What features did you implement and why?</p>
         
-        <div class="project-media">
-          <img src="../../images/Thumbnail.png" alt="Final Design - Screen 1" />
-        </div>
-      </section>
+       <div class="project-media">
+    <div class="project-media">
+        <img src="../../images/Thumbnail.png" alt="Proyecto 1" data-lightbox="single" data-title="Proyecto 1" />
+    </div>
       
       <section class="project-learnings">
         <h2>Outcomes & Learnings</h2>
@@ -121,14 +128,7 @@
         learn from the process? What would you do differently next time?</p>
       </section>
       
-      <div class="project-links">
-        <a href="https://www.behance.net/your-project" target="_blank" class="ver-proyecto-link">
-          <i class="fab fa-behance"></i> View on Behance
-        </a>
-      </div>
-    </article>
-  </main>
-
+      
   <!--Previous project| back to top | Next project-->
  
    <div class="project-navigation-section elegant-clean">
@@ -154,7 +154,9 @@
   </a>
 </div>
 
-  <!-- Footer with proper structure -->
+</main>
+
+<!-- Footer with proper structure -->
   
  <footer class="fade-element" id="footer">
         <div class="footer-content">
@@ -180,17 +182,25 @@
     </footer>
 
 
-  </main>
 
 
   <!-- FIXED: Updated script path to be relative -->
   <script src="../../js/script.js"></script>
 
-  <!-- Lightbox2 JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
+  <!-- Lightbox -->
+  <div id="customLightbox" class="custom-lightbox">
+    <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Cerrar imagen expandida">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+</button>
+        <img src="" alt="Expanded Image" class="lightbox-image">
+        <div class="lightbox-title"></div>
+    </div>
+</div>
   
-
 </body>
 
 </html>

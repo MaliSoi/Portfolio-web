@@ -11,7 +11,7 @@ body {
     color: #1d2022;
     overflow-x: hidden;
     width: 100%;
-}
+  }
 
 main {
     background-color: #fcfaf7;
@@ -624,8 +624,12 @@ header {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-
+.fallback-text {
+  font-size: 1.4rem;
+  color: #999;
+  padding: 1rem;
+  text-align: center;
+}
 
 /* Cambia el color del fondo del overlay */
 .lb-overlay {
@@ -888,7 +892,7 @@ header {
     justify-content: space-between;
     /* Distribuye los 3 items en los extremos y centro */
     align-items: center;
-    margin: 80px auto 60px;
+    margin: 60px auto 10px; /* Increased top margin from 40px to 80px, kept bottom small */
     /* centrado horizontal con margen */
     max-width: 1200px;
     /* ancho máximo para controlar la separación */
@@ -944,9 +948,9 @@ footer,
     /* Color de fondo oscuro */
     color: #fcfaf7;
     /* Texto claro */
-    padding: 40px 0;
+    padding: 20px 0;
     /* Padding superior/inferior y lateral */
-    margin-top: 80px;
+    margin-top: 20px;
     /* Espacio por encima del footer */
     /* text-align: center;  Quitamos esto del padre para que flexbox lo maneje mejor */
     position: relative;
@@ -959,16 +963,11 @@ footer,
 
 .footer-content {
     display: flex;
-    flex-direction: column;
-    /* Apila los elementos principales: copyright, nav, social */
-    align-items: center;
-    /* Centra horizontalmente los elementos apilados */
-    max-width: 1000px;
-    /* Mismo ancho que tu contenido principal */
-    margin: 0 auto;
-    /* Centra el contenedor del footer */
-    gap: 20px;
-    /* Espacio entre el copyright, nav y social */
+    flex-direction: column; /* Apila los elementos principales: copyright, nav, social */
+    align-items: center; /* Centra horizontalmente los elementos apilados */
+    max-width: 1200px; /* Mismo ancho que tu contenido principal */
+    margin: 0 auto; /* Centra el contenedor del footer */
+    gap: 20px; /* Espacio entre el copyright, nav y social */
     list-style: none;
 }
 
