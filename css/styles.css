@@ -308,7 +308,7 @@ header {
 }
 
 .project-card {
-    position:static;
+    position:relative;
     overflow: hidden;
     border-radius: 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -401,10 +401,6 @@ header {
 }
 
 
-.card-1 {
-  background: linear-gradient(135deg, #e1ea7e, #e52e71); /* dirección + colores */
-}
-
 /* ========================================================================= */
 /* --- PROJECT DETAIL PAGE TEMPLATE --- */
 /* ========================================================================= */
@@ -423,7 +419,7 @@ header {
     /* Centra el contenedor principal */
     padding: 1rem;
     font-family: Arial, sans-serif;
-    color: #222;
+    color: #222222;
 }
 
 
@@ -527,19 +523,17 @@ header {
 .project-media img {
     width: 100%;
     max-width: 1200px;
-    height: 90%;
+    height: auto; /* Let it scale naturally */
     border-radius: 0px;
     margin-bottom: 2rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    object-fit: cover;
+    /* Remove object-fit: cover here unless you specifically want cropping outside the lightbox */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Añadido aquí */
     transition: transform 0.3s ease;
-    /* Añadido aquí */
-   
-}
+    cursor: zoom-in; /* Indicate it's clickable */
+   }
 
 .project-media img:hover {
     /* Efecto de hover para las imágenes de galería */
@@ -547,7 +541,7 @@ header {
 }
 
 .project-media {
-  width: 100%;
+  width: auto;
   overflow: hidden;
   border-radius: 8px;
 }
@@ -558,7 +552,8 @@ header {
 .project-content-section,
 .project-process,
 .project-learnings,
-.project-contribution {
+.project-contribution,
+.project-inspiration {
     /* Consolidado para evitar duplicados */
     line-height: 1.6;
     font-size: 1.6rem;
@@ -586,34 +581,34 @@ header {
   text-align: center; /* o left, según preferencia */
 }
 
+
+/* Grid estático para mostrar imágenes en cuadrícula */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .gallery-grid img {
-    width: 100%;
-    max-width: 1200px;
-    border-radius: 6px;
-    height: auto;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Añadido aquí */
-    transition: transform 0.3s ease;
-    /* Añadido aquí */
+  width: 100%;
+  border-radius: 6px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
 }
 
 .gallery-grid img:hover {
-    /* Efecto de hover para las imágenes de galería */
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
-
+/* Para imagenes que deben ocupar todo el ancho en grid */
 .full-width-image {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
-
 
 
 /* Video */
@@ -900,6 +895,32 @@ header {
     transition: stroke 0.3s ease;
     user-select: none;
 }
+
+
+/* --- Profile Toggle Button Disabled State Styles --- */
+.profile-toggle.disabled-toggle {
+    opacity: 0.5; /* Make it semi-transparent */
+    cursor: default; /* Change cursor to default, indicating no action */
+    pointer-events: none; /* Crucial: Prevents click events from firing */
+    background-color: #dcdcdc; /* A slightly darker grey background */
+    border-color: #bbb; /* Adjust border color */
+    color: #888; /* Grey out the text */
+}
+
+/* Optional: Add hover effect to the disabled state (or lack thereof) */
+.profile-toggle.disabled-toggle:hover {
+    background-color: #dcdcdc; /* Keep background same on hover */
+    /* No change in opacity or color on hover */
+}
+
+/* If your button has active/hover states for general use,
+   make sure the disabled state overrides them. */
+.profile-toggle.disabled-toggle:active,
+.profile-toggle.disabled-toggle:focus {
+    outline: none; /* Remove focus outline if undesired */
+    box-shadow: none; /* Remove any active/focus box-shadow */
+}
+
 
 /* === PREVIOUS / NEXT PROJECT STYLES === */
 .project-navigation-section {
@@ -1286,131 +1307,97 @@ footer,
     .project-card a .project-title {
         font-size: 1.4rem;
     }
+
+     /* Swiper */
+    @media (max-width: 768px) {
+      .project-container {
+        padding: 1rem;
+      }
+      
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .swiper {
+        max-width: 100%;
+        margin: 1rem auto;
+      }
+      
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none; /* Ocultar en móvil para mejor UX */
+      }
+    }
 }
-
-
-
-
 
 
 /* ========================================================================= */
 /* --- CUSTOM LIGHTBOX STYLES --- */
 /* ========================================================================= */
 
-.custom-lightbox {
-    display: flex;
-    /* Cambiamos a flex para que la transición de opacidad funcione al inicio */
-    position: fixed;
-    z-index: 1000;
-    /* Asegura que esté por encima de todo */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    /* Permite scroll si la imagen es muy grande */
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Fondo oscuro semi-transparente */
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    /* Centra verticalmente */
-    padding: 20px;
-    box-sizing: border-box;
-    /* Incluye padding en el ancho/alto */
-    opacity: 0;
-    visibility: hidden;
-    /* Oculto visualmente */
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    /* Transición para ambos */
-}
+/* LIGHTBOX STYLES */
+    .custom-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
 
-.custom-lightbox.active {
-    opacity: 1;
-    visibility: visible; /* Visible cuando está activo */
-}
+    .custom-lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
 
-.lightbox-content {
-    position: relative;
-    background-color: #fcfaf7;
-    /* Color de fondo del contenido del lightbox */
-    margin: auto;
-    padding: 20px;
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90%;
+      text-align: center;
+    }
+
+    .lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
     border-radius: 8px;
-    max-width: 90%;
-    /* Ancho máximo en desktop */
-    max-height: 90%;
-    /* Alto máximo en desktop */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Animación de entrada del contenido */
-    transform: translateY(20px); /* Un poco desplazado hacia abajo */
-    opacity: 0; /* Inicialmente invisible */
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Transiciones para el contenido */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    object-fit: contain; /* Ensures the whole image is visible and scaled appropriately */
+    height: auto; /* Ensure aspect ratio is maintained */
+    width: auto; /* Ensure aspect ratio is maintained */
 }
 
-.custom-lightbox.active .lightbox-content {
-    transform: translateY(0); /* Vuelve a su posición original */
-    opacity: 1; /* Se vuelve visible */
-}
+    .lightbox-close {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+      
+    }
 
-.lightbox-image {
-    max-width: 100%;
-    max-height: 70vh;
-    /* Altura máxima para la imagen dentro del lightbox */
-    display: block;
-    object-fit: contain;
-    /* Asegura que la imagen se ajuste sin cortarse */
-    border-radius: 4px;
-}
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
 
-.lightbox-title {
-    color: #1d2022;
-    font-size: 1.2rem;
-    margin-top: 15px;
-    text-align: center;
-    word-wrap: break-word;
-    /* Permite que el título se ajuste a la línea */
-    max-width: 100%;
-    /* Asegura que el título no desborde */
-}
-
-/* Estilos para el nuevo botón SVG de cerrar */
-.lightbox-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    padding: 5px;
-    color: rgba(60, 60, 60, 0.5); /* Color inicial como tus flechas */
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    display: flex; /* Para centrar el SVG si tuviera padding */
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox-close svg {
-    width: 28px; /* Tamaño del SVG */
-    height: 28px;
-    stroke: currentColor; /* El SVG hereda el color del botón */
-    stroke-width: 1.5; /* Grosor de la línea como tus flechas */
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-
-.lightbox-close:hover,
-.lightbox-close:focus {
-    color: #333;
-    outline: none; /* Elimina el borde de enfoque por defecto si lo deseas */
-}
+    .lightbox-title {
+      color: white;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
 
 /* Responsive para el lightbox */
 @media (max-width: 768px) {
