@@ -127,7 +127,7 @@ header {
 
 /* Estilos para la imagen del logo dentro de .logo */
 .logo img {
-    height: 40px;
+    height: 70px;
     /* <-- **CLAVE:** Define un tamaño fijo para tu logo. AJUSTA ESTE VALOR. */
     font-weight: 600;
     width: auto;
