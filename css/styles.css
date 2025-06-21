@@ -859,14 +859,11 @@ header {
     transition: opacity 1s ease-in; /* Transición para el fade-in */
     margin-top: 1rem;
     padding: 20px;
-    border: 2px solid green;
-    border-radius: 8px;
     background-color: #e6ffe6; /* Fondo suave para el éxito */
-    color: green;
+    color:  #4d555b;
     font-size: 1.2rem;
     font-weight: 600;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #success-message.show {
