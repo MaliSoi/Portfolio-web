@@ -11,7 +11,6 @@ body {
     color: #1d2022;
     overflow-x: hidden;
     width: 100%;
-    padding-top: 90px; /* Ajusta este valor al alto de tu navbar (ej. 70px del logo + padding) */
   }
 
 main {
