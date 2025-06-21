@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <li>Textile Illustration</li>
                     <li>Adobe Photoshop, Illustrator, InDesign</li>
                     <li>Color Trend Research</li>
-                    <li>Sustainable Textile Design</li>
+                   <li>Emerging Technologies (Generative AI)</li>
                     `;
                     profileToggle.textContent = "Switch to UX/UI Profile";
                     profileToggle.setAttribute('aria-label', 'Switch to UX/UI Profile');
@@ -79,6 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     <li>Responsive Design</li>
                     <li>User Research & Testing</li>
                     <li>Prototyping & Wireframing</li>
+                    <li>Emerging Technologies (Generative AI)</li>
+                    <li>Github</li>
+                    <li>Netlify</li>
                     `;
                     profileToggle.textContent = "Switch to Textile Profile";
                     profileToggle.setAttribute('aria-label', 'Switch to Textile Profile');
