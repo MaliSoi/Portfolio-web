@@ -295,4 +295,43 @@ form.addEventListener("submit", function (event) {
   .catch(error => alert("Oops! Something went wrong: " + error));
 });
 
- 
+ document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const profileToggle = document.getElementById('profile-toggle'); // Si necesitas interactuar con él
+
+    if (hamburgerMenu && navLinks) {
+        hamburgerMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active'); // Para animar el icono de hamburguesa
+            // Opcional: Ocultar o mover el botón "Switch to Textile design" en móvil
+            // if (profileToggle) {
+            //     profileToggle.classList.toggle('hidden-on-mobile-menu');
+            // }
+        });
+
+        // Cerrar el menú cuando se hace clic en un enlace de navegación
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                    // if (profileToggle) {
+                    //     profileToggle.classList.remove('hidden-on-mobile-menu');
+                    // }
+                }
+            });
+        });
+    }
+
+      // Si tu botón de toggle de perfil necesita JS, lo manejas aquí
+    if (profileToggle) {
+        profileToggle.addEventListener('click', function() {
+            // Lógica para cambiar a diseño textil
+            console.log('Switching to Textile design...');
+            // Por ejemplo, podrías redirigir o cambiar una clase en <body>
+            // window.location.href = "/textile-design";
+        });
+    }
+});
+  
