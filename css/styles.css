@@ -97,18 +97,14 @@ a:hover {
 /* --- HEADER & NAVIGATION --- */
 /* ========================================================================= */
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
-    /* Asegúrate de que el header esté por encima del contenido */
     background-color: #fcfaf7;
     color: #1d2022;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Sombra para un efecto visual */
     padding: 10px 0px;
-    /* Ajusta el padding según lo necesario */
     width: 100%;
-    /* Asegura que el header ocupe todo el ancho de la pantalla */
     box-sizing: border-box;
 }
 
@@ -119,81 +115,38 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    /* AÑADIDO: Importante para el posicionamiento absoluto del nav-links en móvil */
-    position: relative;
+    position: relative; /* Importante para el posicionamiento absoluto del nav-links */
+    height: 70px; /* AGREGAR: Define una altura para el navbar, ajusta según tu logo */
 }
 
 .logo {
     line-height: 0;
-    /* Esto ayuda a eliminar espacio extra debajo de las imágenes */
 }
 
-/* Estilos para la imagen del logo dentro de .logo */
 .logo img {
-    height: 70px;
-    /* <-- **CLAVE:** Define un tamaño fijo para tu logo. AJUSTA ESTE VALOR. */
-    font-weight: 600;
+    height: 70px; /* CLAVE: Define un tamaño fijo para tu logo. */
     width: auto;
-    /* Mantiene la proporción original de la imagen */
+    /* font-weight: 600; */ /* ELIMINAR: Esto es para texto, no para imagen */
     display: block;
-    /* Asegura que no haya espacio extra debajo de la imagen */
     vertical-align: middle;
-    /* Por si el logo tiene texto al lado */
 }
 
+/* --- MOBILE FIRST: Estilos por defecto para el menú hamburguesa y el menú oculto --- */
 
-/* MODIFICADO: Estilos por defecto para móviles (oculta los links) */
-.nav-links {
-    list-style: none;
-    display: none; /* CLAVE: Oculta los links por defecto en móvil */
-    flex-direction: column; /* Apila los links verticalmente */
-    width: 100%;
-    position: absolute; /* Posiciona el menú desplegable */
-    top: 100%; /* Coloca el menú justo debajo del navbar */
-    left: 0;
-    background-color: #fcfaf7; /* Mismo fondo que el header o el que prefieras */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0; /* Padding vertical para los elementos del menú */
-    margin: 0; /* Asegura que no tenga márgenes por defecto */
-    text-align: center; /* Centra el texto de los enlaces */
+/* AGREGAR: Ocultar el botón de escritorio por defecto en móvil */
+#profile-toggle-desktop {
+    display: none;
 }
 
-/* AÑADIDO: Clase que JavaScript agregará para mostrar el menú */
-.nav-links.active {
-    display: flex; /* Muestra los links cuando el menú está activo */
+/* AGREGAR: Mostrar el botón de perfil móvil dentro del menú */
+.profile-toggle-mobile {
+    display: block; /* Asegúrate de que se muestre en móvil */
+    margin-top: 25px; /* Espacio superior para separarlo de los enlaces */
 }
 
-.nav-links li {
-    /* MODIFICADO: Espaciado vertical para móvil */
-    margin: 0.5rem 0;
-}
-
-/* MODIFICADO: Esta regla ya no es estrictamente necesaria con flex-direction column y margin: 0.5rem 0; */
-.nav-links li:last-child {
-    margin-right: 0;
-}
-
-.nav-links a {
-    color: #1d2022;
-    /* MODIFICADO: Tamaño de fuente ligeramente más pequeño para móvil */
-    font-size: 1.1rem;
-    font-weight: 500;
-    display: block;
-    /* MODIFICADO: Ajusta el padding para que los enlaces sean fácilmente clicables en móvil */
-    padding: 12px 20px;
-    font-family: "Manrope", sans-serif;
-    /* AÑADIDO: Transición suave al pasar el ratón */
-    transition: background-color 0.3s ease;
-}
-
-/* AÑADIDO: Efecto hover para links en menú móvil */
-.nav-links a:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* AÑADIDO: Estilos para el Botón de Hamburguesa */
+/* CAMBIAR: Estilos para el botón de hamburguesa (visible en móvil) */
 .hamburger-menu {
-    display: flex; /* CLAVE: Muestra el botón de hamburguesa en móvil */
+    display: flex; /* CAMBIAR: Muestra el botón de hamburguesa en móvil */
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
@@ -203,9 +156,9 @@ header {
     cursor: pointer;
     padding: 0;
     z-index: 1001; /* Asegura que el botón esté por encima del menú desplegado */
-    order: 2; /* Puedes ajustar el orden si quieres que esté a la izquierda del toggle button */
 }
 
+/* CAMBIAR: Animación del icono de hamburguesa a una 'X' */
 .hamburger-menu .bar {
     width: 100%;
     height: 3px;
@@ -213,36 +166,76 @@ header {
     border-radius: 5px;
     transition: all 0.3s ease-in-out; /* Animación suave para el icono */
 }
-
-/* AÑADIDO: Animación del icono de hamburguesa a una 'X' (opcional) */
 .hamburger-menu.active .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
 .hamburger-menu.active .bar:nth-child(2) {
-    opacity: 0; /* Hace que la barra del medio desaparezca */
+    opacity: 0;
 }
 .hamburger-menu.active .bar:nth-child(3) {
     transform: translateY(-11px) rotate(-45deg);
 }
 
-/* Profile Toggle Button */
-.profile-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px auto 40px;
+/* CAMBIAR: Estilos para el menú de navegación (inicialmente oculto en móvil) */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; /* Posiciona el menú desplegable */
+    top: 100%; /* Coloca el menú justo debajo del navbar */
+    left: 0;
+    width: 100%;
+    background-color: #fcfaf7; /* Asegúrate de que este background coincida con el de tu header */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex; /* CAMBIAR: Ahora es flex por defecto para apilar */
+    flex-direction: column; /* Apila los links verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    transform: translateX(100%); /* CLAVE: Oculta los links por defecto en móvil a la derecha */
+    transition: transform 0.3s ease-in-out; /* Transición para el deslizamiento */
+    z-index: 999; /* Asegura que el menú esté debajo del botón de hamburguesa pero encima del contenido */
+    height: calc(100vh); /* AGREGAR: Ocupa el resto de la altura de la ventana (ajusta 70px si tu navbar tiene otra altura) */
+    overflow-y: auto; /* AGREGAR: Permite scroll si hay muchos enlaces */
+    
 }
 
+/* AGREGAR: Clase que JavaScript agregará para mostrar el menú */
+.nav-links.active {
+    transform: translateX(0); /* Muestra los links cuando el menú está activo */
+}
+
+/* CAMBIAR: Espaciado y padding para enlaces de menú móvil */
+.nav-links li {
+    margin: 0.5rem 0;
+}
+
+.nav-links a {
+    color: #1d2022;
+    font-size: 1.5rem; /* AGREGAR: Tamaño de fuente más grande para enlaces de menú móvil */
+    font-weight: 500;
+    display: block;
+    padding: 15px 20px; /* AGREGAR: Ajusta el padding para que los enlaces sean fácilmente clicables en móvil */
+    font-family: "Manrope", sans-serif;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* AGREGAR: Elimina subrayado por defecto */
+}
+
+/* CAMBIAR: Efecto hover para links en menú móvil */
+.nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* CAMBIAR: Profile Toggle Button - Estas reglas son generales para ambos botones */
 .profile-toggle {
     background-color: #1d2022;
     font-size: 1.2rem;
     color: #fcfaf7;
     padding: 12px 25px;
     border: none;
-     border-radius: 25px !important; /* <--- AÑADE EL !important AQUÍ */
+    border-radius: 25px !important;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
-   
+    white-space: nowrap; /* AGREGAR: Evita que el texto se rompa */
 }
 
 .profile-toggle:hover {
@@ -253,29 +246,33 @@ header {
 
 .profile-toggle:active {
     background-color: #4d555b;
-    /* Cambia el color al presionar el botón */
     transform: translateY(0);
-    /* Efecto de "presionar" al hacer clic */
     box-shadow: none;
-    /* Quita la sombra al presionar */
 }
 
-/* --- Desktop Styles: Media Query para pantallas grandes (≥ 769px) --- */
-/* MODIFICADO: La media query ya existía, pero agregamos las reglas para el navbar dentro */
+
+/* --- DESKTOP FIRST: Media Query para pantallas grandes (≥ 769px) --- */
+/* CAMBIAR: El breakpoint a min-width y todo el contenido dentro */
 @media (min-width: 769px) {
-    /* CLAVE: Oculta el botón de hamburguesa en escritorio */
+
+    /* AGREGAR: Ocultar el botón de hamburguesa en escritorio */
     .hamburger-menu {
         display: none;
     }
 
-    /* Ajuste del navbar en escritorio para espaciar bien los elementos */
-    .navbar {
-        justify-content: space-between; /* Espacio entre logo, nav y el botón toggle */
+    /* AGREGAR: Mostrar el botón de escritorio y ocultar el móvil */
+    #profile-toggle-desktop {
+        display: block;
+        margin-left: 30px; /* Espacio entre los nav-links y el botón de toggle */
     }
 
-    /* CLAVE: Muestra los links en escritorio */
+    .profile-toggle-mobile {
+        display: none;
+    }
+
+    /* CAMBIAR: Muestra los links en escritorio */
     .nav-links {
-        display: flex;
+        display: flex; /* Muestra los links */
         position: static; /* Quita el posicionamiento absoluto */
         width: auto; /* Ancho automático */
         flex-direction: row; /* Coloca los links en fila */
@@ -283,35 +280,56 @@ header {
         box-shadow: none; /* Sin sombra */
         padding: 0; /* Sin padding vertical extra */
         margin-left: auto; /* Empuja los enlaces hacia la derecha del logo */
+        transform: translateX(0); /* Asegura que siempre esté visible */
+        height: auto; /* Quita la altura fija del móvil */
+        overflow-y: visible; /* Permite que el contenido no se recorte */
     }
 
+    /* CAMBIAR: Espacio horizontal entre links en escritorio */
     .nav-links li {
-        /* MODIFICADO: Espacio horizontal entre links en escritorio */
         margin: 0 15px;
     }
 
+    /* CAMBIAR: Vuelve al tamaño original para escritorio y efecto hover */
     .nav-links a {
-        /* MODIFICADO: Vuelve al tamaño original para escritorio */
-        font-size: 1.2rem;
-        /* MODIFICADO: Ajusta el padding para escritorio */
+        font-size: 1.1rem;
         padding: 10px 0px;
-        /* AÑADIDO: Para efecto de subrayado en hover */
-        border-bottom: 2px solid transparent;
+        border-bottom: 2px solid transparent; /* Para efecto de subrayado en hover */
     }
 
-    /* AÑADIDO: Quita el fondo en hover para desktop, usa el subrayado */
+    /* CAMBIAR: Quita el fondo en hover para desktop, usa el subrayado */
     .nav-links a:hover {
         background-color: transparent;
         border-color: #8c8375; /* Subraya con el color del botón de toggle */
     }
 
-    /* Ajuste para el botón de toggle en escritorio */
-    .profile-toggle {
-        margin-left: 30px; /* Espacio entre los nav-links y el botón de toggle */
-        order: unset; /* Restaura el orden normal */
+    /* CAMBIAR: Ajuste del navbar en escritorio para espaciar bien los elementos */
+    .navbar {
+        justify-content: space-between; /* Espacio entre logo, nav y el botón toggle */
     }
 }
 
+
+/* --- Profile Toggle Button Disabled State Styles --- */
+/* MANTENER TAL CUAL, ya los tenías bien definidos */
+.profile-toggle.disabled-toggle {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+    background-color: #dcdcdc;
+    border-color: #bbb;
+    color: #888;
+}
+
+.profile-toggle.disabled-toggle:hover {
+    background-color: #dcdcdc;
+}
+
+.profile-toggle.disabled-toggle:active,
+.profile-toggle.disabled-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
 
 /* ========================================================================= */
 /* --- HERO SECTION --- */
@@ -383,12 +401,14 @@ header {
 }
 
 #about-text {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.8;
     color: #1d2022;
     margin-bottom: 20px;
-    text-align: justify;
+    text-align: left;
 }
+
+
 
 /* ========================================================================= */
 /* --- PROJECTS SECTION (CARDS OVERVIEW) --- */
@@ -1216,41 +1236,51 @@ footer,
 }
 
 /* ========================================================================= */
-/* --- RESPONSIVE STYLES (Mobile First Approach - Optional, but good to consider for future) --- */
+/* --- RESPONSIVE STYLES (General) --- */
 /* ========================================================================= */
 
+/* CAMBIAR: La media query (antes 768px, ahora 769px para que no se superponga con min-width) */
 @media (max-width: 768px) {
     /* General Mobile Adjustments */
     body {
-        padding: 0; /* Asegura que no haya padding global no deseado */
+        padding: 0;
         margin: 0;
     }
 
     /* Hero Section */
     #hero {
         flex-direction: column;
-        text-align: center;
-        padding: 2rem 1rem; /* Ajuste de padding para móviles */
+        align-items: flex-start;
+        text-align: left;
+        padding: 6rem 1.5rem;
+        margin-top: 40px; /* Reduce margin top for mobile */
     }
 
     .hero-content,
     .image-content {
         width: 100%;
         text-align: center;
-        padding: 0 1rem; /* Padding horizontal para el contenido del hero */
-        box-sizing: border-box; /* Incluye padding en el ancho total */
+        padding: 0 0rem;
+        box-sizing: border-box;
     }
 
     .hero-title {
-        font-size: 2.8rem; /* Reducido para móviles */
-        letter-spacing: 1px; /* Ajuste para mejor lectura */
-        line-height: 1.2; /* Mejora la legibilidad en varias líneas */
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        text-align: left;
     }
 
     .hero-description {
-        font-size: 1.6rem;
+        font-size: 1.3rem; /* Ligeramente más pequeño para móviles */
         margin-bottom: 20px;
-        padding: 0 1rem; /* Padding horizontal para la descripción */
+        padding: 0 0rem;
+        text-align: left;
+    }
+
+    /* Image content */
+    .image-content {
+        margin-top: 20px; /* Espacio entre el texto y la imagen en móvil */
     }
 
     /* Back to Portfolio */
@@ -1259,176 +1289,207 @@ footer,
     }
 
     .back-to-portfolio {
-        font-size: 0.9rem; /* Ligeramente más pequeño para móviles */
-        text-align: left; /* Generalmente se ve mejor alineado a la izquierda */
+        font-size: 0.9rem;
+        text-align: left;
     }
 
     /* Projects Section (Cards) */
+    #projects h2 {
+        margin: 40px auto 40px; /* Ajusta márgenes para móvil */
+        padding: 0 1rem; /* Añade padding horizontal */
+        font-size: 2rem; /* Reduce el tamaño del título de sección */
+    }
+
     .project-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-        padding: 0 1rem; /* Padding para que las tarjetas no toquen los bordes */
-        gap: 1.5rem; /* Espacio entre tarjetas */
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        gap: 1.5rem;
+        margin: 40px auto; /* Ajusta márgenes para móvil */
     }
 
     .project-card a .project-title {
-        font-size: 1.3rem; /* Ajuste de tamaño para el título de la tarjeta */
+        font-size: 1.3rem;
     }
 
     /* Project Detail Page */
     .project-container {
-        padding: 1rem; /* Padding general para el contenedor del proyecto */
+        padding: 2rem;
     }
 
     .project-header {
-        flex-direction: column; /* Apila los elementos en una columna */
-        align-items: flex-start; /* Alinea al inicio cuando están apilados */
-        padding: 0 1rem; /* Padding para que no toque los bordes */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 1rem;
+        gap: 1rem; /* Reduce el gap */
     }
 
-    .project-container .project-header .project-title,
+    .project-container .project-header .project-title {
+        flex: none;
+        width: 100%;
+        max-width: none;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 2rem; /* Ajusta márgenes para que se vean bien apilados */
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+        font-size: 2rem; /* Reduce el tamaño del título de detalle */
+    }
+
     .project-brief {
-        flex: none; /* Deshabilita flex-grow/shrink */
-        width: 100%; /* Ocupa todo el ancho */
-        max-width: none; /* Elimina límite de ancho máximo */
-        padding-left: 0; /* Elimina padding lateral que pusimos para desktop */
-        padding-right: 0; /* Elimina padding lateral que pusimos para desktop */
-        margin-top: 1rem; /* Ajusta márgenes para que se vean bien apilados */
+        flex: none;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 1rem;
         margin-bottom: 1rem;
         box-sizing: border-box;
     }
 
-    .project-container .project-header .project-title {
-        font-size: 1.8rem; /* Reducir tamaño para móviles */
-        text-align: left; /* Mantener la alineación a la izquierda */
-        margin-top: 2rem; /* Margen superior para el título */
+    .project-brief h2 {
+        font-size: 1.6rem; /* Reduce el tamaño del h2 del brief */
     }
 
-    .project-brief {
-        margin-top: 1rem; /* Margen para el brief debajo del título */
-        font-size: 0.95rem; /* Ajuste de tamaño de fuente para el brief */
+    .project-brief p {
+        font-size: 1.2rem; /* Reduce el tamaño del párrafo del brief */
     }
 
     .project-ficha {
         flex-direction: column; /* Apila los elementos de la ficha */
-        gap: 1rem;
-        padding: 0 1rem; /* Padding para la ficha */
+        gap: 0.8rem; /* Reduce el espacio */
+    }
+
+    .project-ficha > div {
+        flex: none;
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 0.8rem; /* Ajusta el padding */
+        font-size: 1.1rem; /* Reduce el tamaño de fuente */
+    }
+
+    .project-media img {
+        margin-bottom: 1rem; /* Menos margen entre imágenes */
+    }
+
+    .project-challenge,
+    .project-gallery,
+    .project-result,
+    .project-content-section,
+    .project-process,
+    .project-learnings,
+    .project-contribution,
+    .project-inspiration {
+        font-size: 1.2rem; /* Reduce el tamaño del texto del cuerpo */
+        margin-top: 5%; /* Menos margen superior */
+        margin-bottom: 30px; /* Menos margen inferior */
+        padding: 2% 2%; /* Añade padding horizontal */
+    }
+
+    .project-content-section h2 {
+        font-size: 1.8rem; /* Reduce el tamaño de los subtítulos */
     }
 
     .gallery-grid {
-        grid-template-columns: 1fr; /* Una columna para la galería */
-        padding: 0 1rem; /* Padding para la galería */
-        gap: 1rem; /* Espacio entre imágenes de la galería */
+        grid-template-columns: 1fr; /* Una columna para galerías en móvil */
+        padding: 0 1rem; /* Añade padding horizontal */
+        gap: 0.8rem; /* Reduce el espacio entre imágenes */
     }
 
-    .project-detail h1 {
-        font-size: 1.8rem; /* Ajuste para títulos dentro del detalle */
+    .project-video {
+        width: 90%; /* Más ancho en móvil */
+        margin: 2rem auto 1rem auto; /* Ajusta márgenes */
+    }
+
+    .fallback-text,
+    .video-description {
+        font-size: 1rem; /* Más pequeño para móvil */
         padding: 0 1rem;
-    }
-
-    .project-detail h2 {
-        font-size: 1.3rem; /* Ajuste para subtítulos dentro del detalle */
-        padding: 0 1rem;
-    }
-
-    .project-description {
-        font-size: 1rem;
-        line-height: 1.6; /* Mejora la legibilidad del texto */
-        padding: 0 1rem; /* Padding para el texto de la descripción */
     }
 
     /* Skills Section */
     #skills {
-        padding: 2rem 1rem; /* Ajuste de padding para la sección de habilidades */
-    }
-    
-    #skills h2 {
-        font-size: 2rem;
-        text-align: center; /* Centrar el título de habilidades */
+        margin: 40px auto; /* Ajusta márgenes */
+        padding: 2rem 1rem; /* Ajusta padding */
     }
 
-    #skills-list {
-        display: flex;
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-        justify-content: center; /* Centra los elementos */
-        gap: 0.5rem; /* Espacio entre los ítems de la lista */
-        padding: 0 1rem;
+    #skills h2 {
+        font-size: 2rem; /* Reduce el tamaño del título */
+        margin-bottom: 30px;
     }
 
     #skills-list li {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-        margin: 0; /* Elimina márgenes extra si los hay */
+        font-size: 0.9rem; /* Reduce el tamaño de los tags */
+        padding: 8px 15px;
     }
 
     /* Contact Section */
     #contact {
-        padding: 2rem 1rem; /* Ajuste de padding para la sección de contacto */
-        text-align: center; /* Centrar contenido de la sección */
+        margin: 40px auto; /* Ajusta márgenes */
+        padding: 2rem 1rem; /* Ajusta padding */
     }
 
     #contact h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
+        font-size: 2rem; /* Reduce el tamaño del título */
+        margin-bottom: 20px;
     }
 
     #contact p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.1rem; /* Reduce el tamaño del texto */
     }
 
     #contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem; /* Espacio entre campos del formulario */
-        padding: 0 1rem; /* Padding para el formulario */
+        gap: 15px; /* Reduce espacio entre campos */
+        margin-top: 20px;
     }
 
-    #contact-form input,
-    #contact-form textarea,
-    #contact-form button {
+    #contact-form input[type="text"],
+    #contact-form input[type="email"],
+    #contact-form textarea {
+        padding: 12px; /* Reduce padding de inputs */
         font-size: 1rem;
-        padding: 12px;
-        width: 100%; /* Asegura que ocupen todo el ancho disponible */
-        box-sizing: border-box; /* Incluye padding y borde en el ancho */
     }
-    
-    #contact-form button {
-        margin-top: 1rem; /* Espacio encima del botón */
+
+    #contact-form button[type="submit"] {
+        padding: 12px 20px; /* Reduce padding del botón */
+        font-size: 1.1rem;
     }
 
     /* Footer */
-    footer,
-    #footer {
-        padding: 30px 1rem; /* Ajuste de padding para el footer */
-        margin-top: 40px; /* Un poco menos de margen superior */
-        text-align: center; /* Centrar contenido del footer */
-    }
-
     .footer-content {
-        flex-direction: column; /* Apila el contenido del footer */
-        gap: 20px; /* Más espacio entre secciones apiladas */
-        align-items: center; /* Centra los elementos apilados */
+        gap: 15px; /* Reduce el espacio entre elementos del footer */
+        padding: 0 1rem; /* Añade padding horizontal */
     }
 
-    .footer-nav-links {
-        flex-direction: column; /* Apila los enlaces de navegación */
-        gap: 10px; /* Menos espacio entre links de navegación en móvil */
-        align-items: center;
+    .footer-nav-links,
+    .footer-social-links {
+        gap: 15px; /* Reduce el espacio entre enlaces/iconos */
     }
 
     .footer-nav-links li a {
-        font-size: 1rem; /* Ajuste de tamaño para los enlaces */
-        padding: 5px 0; /* Facilita el clic */
-    }
-
-    .footer-social-links {
-        gap: 20px; /* Espacio entre iconos sociales */
-        justify-content: center; /* Centra los iconos */
+        font-size: 0.9rem; /* Reduce el tamaño de los enlaces del footer */
     }
 
     .footer-social-links li a {
-        font-size: 1.5rem; /* Ajusta el tamaño de los iconos en móvil */
+        font-size: 1.4rem; /* Reduce el tamaño de los iconos sociales */
     }
+
+    .footer-copyright {
+        font-size: 0.75rem; /* Más pequeño para copyright */
+    }
+
+    /* Previous/Next Project Nav */
+    .project-navigation-section {
+        flex-direction: column; /* Apila los enlaces de navegación */
+        gap: 15px; /* Espacio entre ellos */
+        margin: 40px auto 10px; /* Ajusta márgenes */
+        padding: 0 1rem; /* Añade padding horizontal */
+    }
+
+    .nav-link {
+        font-size: 1rem; /* Reduce tamaño de fuente */
+        padding: 6px 12px;
+    }
+}
+
+
 
     /* Swiper (Carousels) */
     .swiper {
@@ -1446,7 +1507,7 @@ footer,
         position: relative; /* Ajusta la posición si es necesario */
         bottom: -10px; /* Mueve la paginación un poco hacia abajo */
     }
-}
+
 
 
 /* ========================================================================= */

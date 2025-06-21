@@ -1,122 +1,163 @@
 // Enhanced script.js with improved profile switching and project filtering
 
 document.addEventListener("DOMContentLoaded", function () {
+    // --- NEW/UPDATED: Hamburger Menu & Profile Toggle Buttons ---
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Selecciona AMBOS botones de perfil por su ID
+    const profileToggleDesktop = document.getElementById('profile-toggle-desktop');
+    const profileToggleMenu = document.getElementById('profile-toggle-menu');
+
     // Profile Toggle Functionality
     const aboutText = document.getElementById('about-text');
     const skillsList = document.getElementById('skills-list');
-    const profileToggle = document.getElementById('profile-toggle');
     const heroDescription = document.getElementById('hero-description');
     const projectCards = document.querySelectorAll('.project-card'); // Moved this up for broader scope
 
     let currentProfile = 'uxui'; // Default profile
 
     // Check if we are on the main index.html page or a project detail page
-    // Assuming project detail pages are under a /Proyectos/ directory
     const isOnProjectPage = window.location.pathname.includes('/Proyectos/');
 
     // NEW: Add a class to the button if on a project page
-    if (profileToggle && isOnProjectPage) {
-        profileToggle.classList.add('disabled-toggle');
-        // Optionally, make it unclickable via JS if CSS 'pointer-events: none' isn't enough
-        // profileToggle.style.pointerEvents = 'none'; // Or prevent the default action inside listener
+    // Aplicar a ambos botones si existen
+    if (isOnProjectPage) {
+        if (profileToggleDesktop) profileToggleDesktop.classList.add('disabled-toggle');
+        if (profileToggleMenu) profileToggleMenu.classList.add('disabled-toggle');
     }
 
+    // Función para manejar el clic del botón de perfil (unificada para ambos botones)
+    function handleProfileToggleClick(event) {
+        // Revisa si el botón está deshabilitado
+        if (this.classList.contains('disabled-toggle')) {
+            event.preventDefault(); // Detiene el clic si está deshabilitado
+            return;
+        }
 
-    if (profileToggle) {
-        profileToggle.addEventListener('click', (event) => { // Added 'event' parameter
-            // Prevent default behavior if disabled (redundant if using pointer-events: none, but good for safety)
-            if (profileToggle.classList.contains('disabled-toggle')) {
-                event.preventDefault(); // Stop the click from doing anything else
-                return; // Exit the function early
-            }
-
-            // If on a project page, redirect to index.html with a profile parameter
-            if (isOnProjectPage) {
-                // Determine which profile to switch to after redirection
-                const targetProfile = currentProfile === 'uxui' ? 'textile' : 'uxui';
-                // Redirect to index.html with a query parameter for the profile
-                window.location.href = `../../index.html?profile=${targetProfile}`;
+        // Si estamos en una página de proyecto, redirige a index.html
+        if (isOnProjectPage) {
+            const targetProfile = currentProfile === 'uxui' ? 'textile' : 'uxui';
+            window.location.href = `../../index.html?profile=${targetProfile}`;
+        } else {
+            // Lógica de cambio de perfil en index.html
+            if (currentProfile === 'uxui') {
+                // Switching to Textile profile
+                aboutText.innerHTML = `
+                I'm a textile designer and visual artist with over 15 years of experience in print and surface design. <br><br>
+                I blend technique, color, and intuition to create meaningful patterns and products. I'm especially interested in sustainable design and the emotional connection that textures and prints can evoke.
+                `;
+                heroDescription.innerHTML = "Explore my world between digital and textile. Textile projects: prints, color explorations, mockups, and more.";
+                skillsList.innerHTML = `
+                <li>Surface Pattern Design</li>
+                <li>Textile Illustration</li>
+                <li>Adobe Photoshop, Illustrator, InDesign</li>
+                <li>Color Trend Research</li>
+                <li>Emerging Technologies (Generative AI)</li>
+                `;
+                // Actualiza el texto de AMBOS botones de perfil
+                if (profileToggleDesktop) profileToggleDesktop.textContent = "Switch to UX/UI Profile";
+                if (profileToggleMenu) profileToggleMenu.textContent = "Switch to UX/UI Profile";
+                currentProfile = 'textile';
+                document.title = "Malala Soifer | Textile & Surface Design";
             } else {
-                // This is the existing logic for the main index.html page
-                if (currentProfile === 'uxui') {
-                    // Switching to Textile profile
-                    aboutText.innerHTML = `
-                    I'm a textile designer and visual artist with over 15 years of experience in print and surface design. <br><br>
-                    I blend technique, color, and intuition to create meaningful patterns and products. I'm especially interested in sustainable design and the emotional connection that textures and prints can evoke.
-                    `;
-                    heroDescription.innerHTML = "Explore my world between digital and textile. Textile projects: prints, color explorations, mockups, and more.";
-                    skillsList.innerHTML = `
-                    <li>Surface Pattern Design</li>
-                    <li>Textile Illustration</li>
-                    <li>Adobe Photoshop, Illustrator, InDesign</li>
-                    <li>Color Trend Research</li>
-                   <li>Emerging Technologies (Generative AI)</li>
-                    `;
-                    profileToggle.textContent = "Switch to UX/UI Profile";
-                    profileToggle.setAttribute('aria-label', 'Switch to UX/UI Profile');
-                    currentProfile = 'textile';
-                    document.title = "Malala Soifer | Textile & Surface Design";
-                } else {
-                    // Switching to UX/UI profile
-                    aboutText.innerHTML = `
-                    Hi! I'm Malala — a designer with over 15 years of experience in <strong>textile graphic design</strong> and a
-                    background in Fine Arts. I bring a strong aesthetic sensibility, a critical eye for detail, and a deep
-                    understanding of visual composition.
+                // Switching to UX/UI profile
+                aboutText.innerHTML = `
+                Hi! I'm Malala — a designer with over 15 years of experience in <strong>textile graphic design</strong> and a
+                background in Fine Arts. I bring a strong aesthetic sensibility, a critical eye for detail, and a deep
+                understanding of visual composition.
 
-                    Driven by curiosity and a desire to solve real-world problems, I've transitioned into <strong>UX/UI design</strong> and <strong>Front-End development</strong>—
-                    applying my creative vision to digital experiences that are both intuitive and visually engaging.
+                Driven by curiosity and a desire to solve real-world problems, I've transitioned into <strong>UX/UI design</strong> and <strong>Front-End development</strong>—
+                applying my creative vision to digital experiences that are both intuitive and visually engaging.
 
-                    <br><br>I'm currently working as a <strong>UX/UI & Front-End Intern</strong> at The Integrity Game, where I also contribute to graphic
-                    design. I'm continuously learning and building with <strong>HTML, CSS, JavaScript, and React</strong>.
+                <br><br>I'm currently working as a <strong>UX/UI & Front-End Intern</strong> at The Integrity Game, where I also contribute to graphic
+                design. I'm continuously learning and building with <strong>HTML, CSS, JavaScript, and React</strong>.
 
-                    I'm especially passionate about projects in <strong>eCommerce and Retail</strong>—crafting user-centered, strategic solutions for
-                    digital catalogs and shopping experiences that connect people to products in meaningful ways.
-                    `;
-                    heroDescription.innerHTML = `Explore my world between digital and textile. <strong>UX/UI, apps, websites, graphic design</strong>, and more.`;
-                    skillsList.innerHTML = `
-                    <li>UX/UI Design</li>
-                    <li>Frontend Development (HTML, CSS, JavaScript)</li>
-                    <li>Responsive Design</li>
-                    <li>User Research & Testing</li>
-                    <li>Prototyping & Wireframing</li>
-                    <li>Emerging Technologies (Generative AI)</li>
-                    <li>Github</li>
-                    <li>Netlify</li>
-                    `;
-                    profileToggle.textContent = "Switch to Textile Profile";
-                    profileToggle.setAttribute('aria-label', 'Switch to Textile Profile');
-                    currentProfile = 'uxui';
-                    document.title = "Malala Soifer | UX/UI & Frontend";
-                }
-
-                // Filter projects based on current profile (only if projectCards exist on the page)
-                if (projectCards.length > 0) { // Check if there are project cards before filtering
-                    filterProjects(currentProfile);
-                }
+                I'm especially passionate about projects in <strong>eCommerce and Retail</strong>—crafting user-centered, strategic solutions for
+                digital catalogs and shopping experiences that connect people to products in meaningful ways.
+                `;
+                heroDescription.innerHTML = `Explore my world between digital and textile. <strong>UX/UI, apps, websites, graphic design</strong>, and more.`;
+                skillsList.innerHTML = `
+                <li>UX/UI Design</li>
+                <li>Frontend Development (HTML, CSS, JavaScript)</li>
+                <li>Responsive Design</li>
+                <li>User Research & Testing</li>
+                <li>Prototyping & Wireframing</li>
+                <li>Emerging Technologies (Generative AI)</li>
+                <li>Github</li>
+                <li>Netlify</li>
+                `;
+                // Actualiza el texto de AMBOS botones de perfil
+                if (profileToggleDesktop) profileToggleDesktop.textContent = "Switch to Textile Profile";
+                if (profileToggleMenu) profileToggleMenu.textContent = "Switch to Textile Profile";
+                currentProfile = 'uxui';
+                document.title = "Malala Soifer | UX/UI & Frontend";
             }
+
+            // Filtrar proyectos si existen en la página actual
+            if (projectCards.length > 0) {
+                filterProjects(currentProfile);
+            }
+        }
+
+        // Si el menú hamburguesa está abierto y el clic fue en el botón del menú, ciérralo
+        if (navLinks.classList.contains('active') && this === profileToggleMenu) {
+            navLinks.classList.remove('active');
+            hamburgerMenu.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+    }
+
+    // Asigna el mismo manejador de eventos a AMBOS botones
+    if (profileToggleDesktop) profileToggleDesktop.addEventListener('click', handleProfileToggleClick);
+    if (profileToggleMenu) profileToggleMenu.addEventListener('click', handleProfileToggleClick);
+
+
+    // Lógica del menú hamburguesa (combinada con el DOMContentLoaded inicial)
+    if (hamburgerMenu && navLinks) {
+        hamburgerMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active');
+            document.body.classList.toggle('no-scroll'); // Opcional: evita scroll en el body
+        });
+
+        // Cerrar menú al hacer clic en un enlace o en el botón de perfil dentro del menú
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                // Solo cierra el menú si la pantalla es de móvil (menos de 769px)
+                if (window.innerWidth < 769) { // Usa 769px como breakpoint
+                    navLinks.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
         });
     }
+    // --- END NEW/UPDATED: Hamburger Menu & Profile Toggle Buttons ---
 
     // Function to set profile based on a given string (or URL parameter)
     function setProfile(profileToSet) {
-        // Temporarily remove the disabled class if present, to allow the programmatic click
-        const wasDisabled = profileToggle.classList.contains('disabled-toggle');
-        if (wasDisabled) {
-            profileToggle.classList.remove('disabled-toggle');
-        }
+        // Deshabilita temporalmente los botones si estaban deshabilitados
+        const wasDesktopDisabled = profileToggleDesktop && profileToggleDesktop.classList.contains('disabled-toggle');
+        const wasMenuDisabled = profileToggleMenu && profileToggleMenu.classList.contains('disabled-toggle');
 
+        if (wasDesktopDisabled) profileToggleDesktop.classList.remove('disabled-toggle');
+        if (wasMenuDisabled) profileToggleMenu.classList.remove('disabled-toggle');
+
+        // Simula el clic en el botón de escritorio para activar la lógica de cambio
+        // El manejador handleProfileToggleClick ahora maneja el estado
         if (profileToSet === 'textile') {
-            currentProfile = 'uxui'; // Set to UX/UI first, so the toggle logic switches it to textile
-            profileToggle.click(); // Simulate a click to run the toggle logic
+            currentProfile = 'uxui'; // Establece esto para que el clic lo cambie a 'textile'
         } else {
-            currentProfile = 'textile'; // Set to Textile first, so the toggle logic switches it to UX/UI
-            profileToggle.click(); // Simulate a click to run the toggle logic
+            currentProfile = 'textile'; // Establece esto para que el clic lo cambie a 'uxui'
         }
+        // Simula un click en el botón de escritorio (o cualquiera de los dos, da igual)
+        if (profileToggleDesktop) profileToggleDesktop.click();
 
-        // Re-add the disabled class if it was present
-        if (wasDisabled) {
-            profileToggle.classList.add('disabled-toggle');
-        }
+
+        // Vuelve a habilitar si estaban deshabilitados
+        if (wasDesktopDisabled) profileToggleDesktop.classList.add('disabled-toggle');
+        if (wasMenuDisabled) profileToggleMenu.classList.add('disabled-toggle');
     }
 
     // New: Check for profile parameter in URL on page load
@@ -126,9 +167,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (profileParam && (profileParam === 'uxui' || profileParam === 'textile')) {
             setProfile(profileParam);
         } else {
-            // Initialize with default 'uxui' profile if no parameter or invalid parameter
+            // Inicializa con el perfil 'uxui' si no hay parámetro o es inválido
+            // Simula un clic para establecer el perfil UX/UI por defecto al cargar la página
+            // Asegúrate de que currentProfile sea 'textile' ANTES del clic para que cambie a 'uxui'
             currentProfile = 'textile';
-            if (profileToggle) profileToggle.click();
+            if (profileToggleDesktop) profileToggleDesktop.click();
         }
     }
 
@@ -294,44 +337,4 @@ form.addEventListener("submit", function (event) {
   })
   .catch(error => alert("Oops! Something went wrong: " + error));
 });
-
- document.addEventListener('DOMContentLoaded', function() {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navLinks = document.querySelector('.nav-links');
-    const profileToggle = document.getElementById('profile-toggle'); // Si necesitas interactuar con él
-
-    if (hamburgerMenu && navLinks) {
-        hamburgerMenu.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            hamburgerMenu.classList.toggle('active'); // Para animar el icono de hamburguesa
-            // Opcional: Ocultar o mover el botón "Switch to Textile design" en móvil
-            // if (profileToggle) {
-            //     profileToggle.classList.toggle('hidden-on-mobile-menu');
-            // }
-        });
-
-        // Cerrar el menú cuando se hace clic en un enlace de navegación
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    hamburgerMenu.classList.remove('active');
-                    // if (profileToggle) {
-                    //     profileToggle.classList.remove('hidden-on-mobile-menu');
-                    // }
-                }
-            });
-        });
-    }
-
-      // Si tu botón de toggle de perfil necesita JS, lo manejas aquí
-    if (profileToggle) {
-        profileToggle.addEventListener('click', function() {
-            // Lógica para cambiar a diseño textil
-            console.log('Switching to Textile design...');
-            // Por ejemplo, podrías redirigir o cambiar una clase en <body>
-            // window.location.href = "/textile-design";
-        });
-    }
-});
-  
+ 
