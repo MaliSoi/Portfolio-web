@@ -259,4 +259,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+
+// Forms
+
+const form = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(() => {
+    form.reset(); // Limpia los campos del formulario
+
+    // Aplica el estilo para el fade out del formulario
+    form.style.transition = "opacity 1s ease-out";
+    form.style.opacity = "0";
+
+    // Espera a que el fade out del formulario termine antes de ocultarlo y mostrar el mensaje
+    setTimeout(() => {
+      form.style.display = "none"; // Oculta el formulario después del fade out
+      successMessage.style.display = "block"; // Muestra el contenedor del mensaje
+      successMessage.classList.add("show"); // Agrega la clase 'show' para activar el fade-in
+    }, 1000); // 1000ms = 1 segundo, igual a la duración de la transición del formulario
+  })
+  .catch(error => alert("Oops! Something went wrong: " + error));
+});
+
  

@@ -190,7 +190,7 @@
       </ul>
     </section>
 
-    <!-- Contact Section -->
+   <!-- Contact Section -->
 <section id="contact" class="fade-element">
   <h2>Let's connect!</h2>
   <p>Have a project in mind or want to know more? 
@@ -202,18 +202,21 @@
     <a href="https://github.com/MaliSoi" target="_blank">GitHub</a>
   </p>
 
-  <form name="contact" method="POST" data-netlify="true" netlify id="contact-form">
+  <form name="contact" method="POST" data-netlify="true" id="contact-form">
     <input type="hidden" name="form-name" value="contact">
-
+    
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" required></textarea>
-
+    
     <button type="submit">Send</button>
   </form>
 
-  </section>
-
+  <!-- Success Message -->
+  <div id="success-message" style="display:none; margin-top: 1rem; color: green;">
+    ✅ Thank you! Your message has been sent.
+  </div>
+</section>
 
   <!-- back to top -->
 
