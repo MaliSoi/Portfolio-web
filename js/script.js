@@ -159,91 +159,159 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 // =============================
-// Swiper Lightbox desde galería
+// LIGHTBOX MEJORADO - Funciona para imágenes individuales Y galerías
 // =============================
 const lightbox = document.getElementById("customLightbox");
-const swiperWrapper = lightbox.querySelector(".swiper-wrapper");
-const lightboxTitle = lightbox.querySelector(".lightbox-title");
-const closeBtn = lightbox.querySelector(".lightbox-close");
+const swiperWrapper = lightbox?.querySelector(".swiper-wrapper");
+const lightboxTitle = lightbox?.querySelector(".lightbox-title");
+const closeBtn = lightbox?.querySelector(".lightbox-close");
 
-// Recolectamos todas las imágenes que abrirán el lightbox
-const galleryItems = document.querySelectorAll('[data-lightbox="gallery"]');
-const slidesData = [];
+if (lightbox && swiperWrapper && lightboxTitle && closeBtn) {
+  // Recolectamos TODAS las imágenes que pueden expandirse
+  const galleryItems = document.querySelectorAll('[data-lightbox="gallery"]');
+  const singleItems = document.querySelectorAll('[data-lightbox="single"]');
+  
+  let slidesData = [];
+  let currentSwiperInstance = null;
 
-galleryItems.forEach((item, index) => {
-  const img = item.querySelector("img");
-  if (img) {
-    slidesData.push({
-      src: img.src,
-      title: item.getAttribute("data-title") || img.alt || ""
-    });
-
-    item.addEventListener("click", () => {
-      openLightbox(index);
+  // Función para crear datos de slides desde elementos
+  function createSlideData(items) {
+    return Array.from(items).map(item => {
+      const img = item.querySelector("img") || item;
+      return {
+        src: img.src,
+        title: item.getAttribute("data-title") || img.alt || ""
+      };
     });
   }
-});
 
-function openLightbox(startIndex) {
-  swiperWrapper.innerHTML = ""; // Limpiamos lo anterior
+  // Función para abrir el lightbox
+  function openLightbox(startIndex, slides) {
+    slidesData = slides;
+    swiperWrapper.innerHTML = ""; // Limpiamos lo anterior
 
-  slidesData.forEach(data => {
-    const slide = document.createElement("div");
-    slide.classList.add("swiper-slide");
+    slidesData.forEach(data => {
+      const slide = document.createElement("div");
+      slide.classList.add("swiper-slide");
 
-    const image = document.createElement("img");
-    image.src = data.src;
-    image.alt = data.title;
+      const image = document.createElement("img");
+      image.src = data.src;
+      image.alt = data.title;
 
-    slide.appendChild(image);
-    swiperWrapper.appendChild(slide);
-  });
+      slide.appendChild(image);
+      swiperWrapper.appendChild(slide);
+    });
 
-  lightbox.classList.add("open");
-  document.body.style.overflow = "hidden";
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
 
-  if (window.swiperInstance) window.swiperInstance.destroy(true, true);
+    // Destruir instancia anterior si existe
+    if (currentSwiperInstance) {
+      currentSwiperInstance.destroy(true, true);
+    }
 
-  window.swiperInstance = new Swiper(".mySwiper", {
-    initialSlide: startIndex,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-    on: {
-      slideChange: function () {
-        const realIndex = this.realIndex;
-        lightboxTitle.textContent = slidesData[realIndex].title || "";
+    // Crear nueva instancia de Swiper
+    currentSwiperInstance = new Swiper(".mySwiper", {
+      initialSlide: startIndex,
+      loop: slidesData.length > 1, // Solo loop si hay más de una imagen
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      keyboard: {
+        enabled: true
+      },
+      on: {
+        slideChange: function () {
+          const realIndex = this.realIndex;
+          lightboxTitle.textContent = slidesData[realIndex].title || "";
+        }
       }
+    });
+
+    // Ocultar navegación si solo hay una imagen
+    const navButtons = lightbox.querySelectorAll('.swiper-button-next, .swiper-button-prev');
+    const pagination = lightbox.querySelector('.swiper-pagination');
+    
+    if (slidesData.length <= 1) {
+      navButtons.forEach(btn => btn.style.display = 'none');
+      if (pagination) pagination.style.display = 'none';
+    } else {
+      navButtons.forEach(btn => btn.style.display = 'block');
+      if (pagination) pagination.style.display = 'block';
+    }
+
+    lightboxTitle.textContent = slidesData[startIndex].title || "";
+  }
+
+  // Event listeners para imágenes de galería
+  if (galleryItems.length > 0) {
+    const gallerySlides = createSlideData(galleryItems);
+    
+    galleryItems.forEach((item, index) => {
+      const img = item.querySelector("img");
+      if (img) {
+        img.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          openLightbox(index, gallerySlides);
+        });
+      }
+    });
+  }
+
+  // Event listeners para imágenes individuales
+  if (singleItems.length > 0) {
+    singleItems.forEach((item) => {
+      const img = item.querySelector("img") || item;
+      img.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const singleSlides = createSlideData([item]);
+        openLightbox(0, singleSlides);
+      });
+    });
+  }
+
+  // Cerrar lightbox
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("open");
+    document.body.style.overflow = "";
+    if (currentSwiperInstance) {
+      currentSwiperInstance.destroy(true, true);
+      currentSwiperInstance = null;
     }
   });
 
-  lightboxTitle.textContent = slidesData[startIndex].title || "";
+  // Cerrar con ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("open")) {
+      closeBtn.click();
+    }
+  });
+
+  // Cerrar clickeando fuera de la imagen
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      closeBtn.click();
+    }
+  });
 }
-
-closeBtn.addEventListener("click", () => {
-  lightbox.classList.remove("open");
-  document.body.style.overflow = "";
-});
-
 
 // ========================
 // Back to Top Link Logic
 // ========================
-document.addEventListener('DOMContentLoaded', function () {
-  const backToTopLink = document.querySelector('.back-to-top-link');
-  if (backToTopLink) {
-    backToTopLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-});
+const backToTopLink = document.querySelector('.back-to-top-link');
+if (backToTopLink) {
+  backToTopLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 // ========================
 // Form Submission Logic
@@ -251,25 +319,29 @@ document.addEventListener('DOMContentLoaded', function () {
 const form = document.getElementById("contact-form");
 const successMessage = document.getElementById("success-message");
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
+if (form && successMessage) {
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  const formData = new FormData(form);
+    const formData = new FormData(form);
 
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString()
-  })
-    .then(() => {
-      form.reset();
-      form.style.transition = "opacity 1s ease-out";
-      form.style.opacity = "0";
-      setTimeout(() => {
-        form.style.display = "none";
-        successMessage.style.display = "block";
-        successMessage.classList.add("show");
-      }, 1000);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
     })
-    .catch(error => alert("Oops! Something went wrong: " + error));
-});
+      .then(() => {
+        form.reset();
+        form.style.transition = "opacity 1s ease-out";
+        form.style.opacity = "0";
+        setTimeout(() => {
+          form.style.display = "none";
+          successMessage.style.display = "block";
+          successMessage.classList.add("show");
+        }, 1000);
+      })
+      .catch(error => alert("Oops! Something went wrong: " + error));
+  });
+}
+
+}); // Fin del DOMContentLoaded
