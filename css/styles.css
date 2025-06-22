@@ -399,7 +399,7 @@ header {
 
 #about-text {
     font-size: 1.4rem;
-    line-height: 1.6;
+    line-height: 1.4;
     color:#4d555b;
     margin-bottom: 20px;
     text-align: left;
@@ -915,7 +915,6 @@ header {
 #contact-form input[type="text"],
 #contact-form input[type="email"],
 #contact-form textarea {
-    width: 100%;
     /* Ocupa todo el ancho disponible del contenedor del formulario */
     padding: 15px;
     border: 1px solid #cccccc;
