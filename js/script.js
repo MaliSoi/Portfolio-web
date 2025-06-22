@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 I'm a textile designer and visual artist with over 15 years of experience in print and surface design. <br><br>
                 I blend technique, color, and intuition to create meaningful patterns and products. I'm especially interested in sustainable design and the emotional connection that textures and prints can evoke.
                 `;
-                heroDescription.innerHTML = "Explore my world between digital and textile. Textile projects: prints, color explorations, mockups, and more.";
+                heroDescription.innerHTML = "Explore my world between digital and textile. <strong>Prints, color explorations, mockups</strong>, and more.";
                 skillsList.innerHTML = `
                 <li>Surface Pattern Design</li>
                 <li>Textile Illustration</li>
