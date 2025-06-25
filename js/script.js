@@ -195,8 +195,37 @@ if (lightbox && swiperWrapper && lightboxTitle && closeBtn) {
       slide.classList.add("swiper-slide");
 
       const image = document.createElement("img");
-      image.src = data.src;
-      image.alt = data.title;
+image.src = data.src;
+image.alt = data.title;
+image.classList.add("zoomable-image");
+
+let scale = 1;
+
+// Zoom con rueda de mouse o trackpad
+image.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  const delta = Math.sign(e.deltaY) * -0.1;
+  scale += delta;
+  scale = Math.min(Math.max(1, scale), 3); // Zoom entre 1x y 3x
+  image.style.transform = `scale(${scale})`;
+
+  if (scale > 1) {
+    image.classList.add("zoomed-in");
+  } else {
+    image.classList.remove("zoomed-in");
+  }
+});
+
+// Reset zoom con clic
+image.addEventListener('click', (e) => {
+  if (scale > 1) {
+    e.stopPropagation();
+    scale = 1;
+    image.style.transform = `scale(1)`;
+    image.classList.remove("zoomed-in");
+  }
+});
+
 
       slide.appendChild(image);
       swiperWrapper.appendChild(slide);

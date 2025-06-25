@@ -648,15 +648,14 @@ header {
 
 
 .project-media img {
-    width: 100%;
-    max-width: 1200px;
-    height: auto; /* Let it scale naturally */
+    width: 60%;
+    max-width:600px;
+    height: 600px; 
     border-radius: 0px;
     margin-bottom: 2rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /* Remove object-fit: cover here unless you specifically want cropping outside the lightbox */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     cursor: zoom-in; /* Indicate it's clickable */
@@ -1671,6 +1670,15 @@ footer,
 /* El contenedor no debe tener cursor pointer */
 [data-lightbox] {
   cursor: default;
+}
+
+.zoomable-image {
+  transition: transform 0.3s ease;
+  will-change: transform;
+  cursor: zoom-in;
+}
+.zoomed-in {
+  cursor: zoom-out;
 }
 
 /* Responsive */
