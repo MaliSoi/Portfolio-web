@@ -618,7 +618,7 @@ header {
 }
 
 .project-brief p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
     /* Espacio debajo del párrafo del brief */
@@ -629,7 +629,7 @@ header {
 
 /* Ficha dentro del brief */
 .project-ficha {
-    margin-top: 2rem;
+    margin-top: 1rem;
     /* Margen superior para separarlo del párrafo del brief */
     display: flex;
     gap: 1.5rem;
@@ -648,9 +648,9 @@ header {
 
 
 .project-media img {
-    width: 60%;
-    max-width:600px;
-    height: 600px; 
+    width: 100%;
+    max-width:800px;
+    height: auto; 
     border-radius: 0px;
     margin-bottom: 2rem;
     display: block;
