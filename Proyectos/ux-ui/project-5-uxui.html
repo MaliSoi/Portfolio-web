@@ -233,9 +233,11 @@
   </footer>
 
 
-  <!-- FIXED: Updated script path to be relative -->
+   <!-- FIXED: Updated script path to be relative -->
   <script src="../../js/script.js"></script>
 
+
+ 
   <!-- Lightbox -->
   <div id="customLightbox" class="custom-lightbox">
     <div class="lightbox-content">
@@ -247,8 +249,17 @@
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
-      <img src="" alt="Expanded Image" class="lightbox-image">
-      <div class="lightbox-title"></div>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- SE LLENA DESDE JS -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="lightbox-title">Título</div>
     </div>
   </div>
 

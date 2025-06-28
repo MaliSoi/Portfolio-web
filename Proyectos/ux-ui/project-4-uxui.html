@@ -4,13 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Epicurean Escape</title>
+  <title>Arquitecture website design</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- CSS path to be relative from subfolder -->
   <link rel="stylesheet" href="../../css/styles.css">
 
-  
+   <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+ 
 
 </head>
 
@@ -84,14 +87,14 @@
     </div>
 
    
-       <!--
-<div class="project-media">
-  <video autoplay muted loop playsinline class="project-video">
-    <source src="../../videos/Video_presentacion.mp4" type="video/mp4">
-    <p class="fallback-text">Este proyecto incluye un video, pero tu navegador no lo puede mostrar.</p>
-  </video>
-</div>
--->
+   <div class="project-media">
+      <div class="project-media img">
+        <img src="../../images/mockup_desktop & mobile.jpg" alt="Proyecto 1" data-lightbox="single" data-title="Final responsive design of my personal portfolio, optimized for desktop and mobile." />
+        <p class="project-caption">Final responsive design of my personal portfolio, optimized for desktop and mobile.
+        </p>
+      </div>
+
+
        <div> 
       <section class="project-challenge">
       <h2>The Challenge</h2>
@@ -202,22 +205,35 @@
 
 
 
-  <!-- FIXED: Updated script path to be relative -->
+   <!-- FIXED: Updated script path to be relative -->
   <script src="../../js/script.js"></script>
 
+
+ 
   <!-- Lightbox -->
   <div id="customLightbox" class="custom-lightbox">
     <div class="lightbox-content">
-        <button class="lightbox-close" aria-label="Cerrar imagen expandida">
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-    </svg>
-</button>
-        <img src="" alt="Expanded Image" class="lightbox-image">
-        <div class="lightbox-title"></div>
+      <button class="lightbox-close" aria-label="Cerrar imagen expandida">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-x">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- SE LLENA DESDE JS -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="lightbox-title">Título</div>
     </div>
-</div>
+  </div>
 
 
 </body>
