@@ -10,8 +10,12 @@
   <!-- CSS path to be relative from subfolder -->
   <link rel="stylesheet" href="../../css/styles.css">
 
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 </head>
+
 
 <body>
 
@@ -24,18 +28,19 @@
         </a>
       </div>
 
-       <button class="hamburger-menu" aria-label="Abrir menú de navegación">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+      <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
       <ul class="nav-links">
         <li><a href="../../index.html#about">About</a></li>
         <li><a href="../../index.html#projects">Projects</a></li>
         <li><a href="../../index.html#skills">Skills</a></li>
         <li><a href="../../index.html#contact">Contact</a></li>
-        <li class="profile-toggle-mobile"><button id="profile-toggle-menu" class="profile-toggle">Switch to Textile design</button></li>
+        <li class="profile-toggle-mobile"><button id="profile-toggle-menu" class="profile-toggle">Switch to Textile
+            design</button></li>
       </ul>
       <button id="profile-toggle-desktop" class="profile-toggle">Switch to Textile design</button>
     </nav>
@@ -61,15 +66,13 @@
 
         <div class="project-brief">
           <h2>Brief</h2>
-          <p>Swap Now is an app designed to give clothing a second life by making it easier for users to exchange
-            garments in a seamless and sustainable way. Through user research, wireframing, and prototyping, I developed
-            an intuitive experience that encourages circular fashion while ensuring a smooth swapping process. The
-            design focuses on usability, trust, and accessibility, making sustainable fashion more engaging and
-            practical for everyone.</p>
+          <p>"Swap Now" is an e-store concept for swapping, selling, and buying second-hand clothing within trusted
+            social groups (friends, family) and a close radius. A key future feature is to facilitate community events
+            and pop-up fairs, further fostering a stronger sustainable fashion community.</p>
 
           <div class="project-ficha">
-            <div><strong>Timeline:</strong> 3 meses</div>
-            <div><strong>Service:</strong> UX/UI - web designer</div>
+            <div><strong>Timeline:</strong> 2 months</div>
+            <div><strong>Service:</strong> UX/UI designer</div>
             <div><strong>Role:</strong> Principal Designer</div>
             <div><strong>Tools:</strong> Figma, Photoshop, Illustrator.</div>
           </div>
@@ -77,101 +80,105 @@
       </section>
     </div>
 
-
-
-    <div class="project-media">
-      <video autoplay muted loop playsinline class="project-video">
-        <source src="../../videos/Swap Now flow interaction.mp4" type="video/mp4">
-        <p class="fallback-text">Este proyecto incluye un video, pero tu navegador no lo puede mostrar.</p>
-      </video>
-    </div>
-
-
-    <div>
-      <section class="project-challenge">
-        <h2>The Challenge</h2>
-        <p>Explain the problem you were trying to solve or the opportunity you identified.
-          What were the constraints? Who were the users? What were their needs? Research Insights: Explain the problems
-          you identified through your research. You can mention the methods used (interviews, surveys, competitive
-          analysis).
-
-          Visuals: If you have user personas, empathy maps, or charts/graphs of research findings (e.g., "70% of users
-          struggled with X"), this is a good place to include them as images or small diagrams alongside the text. They
-          don't have to be UI designs, but rather evidence of your research.</p>
-      </section>
-    </div>
-
-    <section class="project-process">
-      <h2>The Process</h2>
-      <p>Outline your design process. What research did you conduct? How did you
-        approach the problem? What design decisions did you make along the way?
-        User Flows: Show how users would navigate through the application to complete a key task. A flowchart is ideal
-        here.
-
-        Wireframes (Low and Mid-Fidelity): Present basic sketches or wireframes to demonstrate how information and
-        interaction were structured before adding visual design. You can show a progression (e.g., hand-drawn sketch ->
-        digital wireframe).
-
-        Information Architecture (IA) Diagrams / Site Maps: If the project required it, a map of how the information is
-        organized can be useful.
-
-        Prototypes (Link): If you have an interactive prototype in Figma, InVision, etc., this is the perfect place to
-        include a clear link ("View interactive prototype").
-
-        Design Decisions: Explain why you made certain decisions at this stage, based on your research or usability
-        principles.
-
-        Visuals: Include images of your user flows, wireframes, and other process artifacts here. These can be Figma
-        screenshots or drawings.</p>
-    </section>
-
-    <section class="project-gallery">
-      <h2>Galería</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 1">
-          <img src="../../images/SwapNow.png" alt="Imagen 1" />
-        </div>
-        <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 2">
-          <img src="../../images/SwapNow.png" alt="Imagen 2" />
-        </div>
-        <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 3">
-          <img src="../../images/SwapNow.png" alt="Imagen 3" />
-        </div>
-        <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 4">
-          <img src="../../images/SwapNow.png" alt="Imagen 4" />
-        </div>
-      </div>
-    </section>
-
-    <section class="project-result">
-      <h2>The Solution</h2>
-      <p>Describe your final design solution in detail. How does it address the initial
-        challenge? What features did you implement and why?
-        Here, in addition to the final UI screens (which you had already planned), you can make a direct connection
-        between your research/wireframing process and the final solution.
-
-        Suggested Content:
-
-        How the final solution addresses the problems identified in the research.
-        If you conducted usability testing, mention the results here and how they informed the final adjustments.
-        How to integrate it visually:
-
-        Don't overdo it: You don't need to show every single wireframe. Select the most representative ones or those
-        that highlight a key point in your process.
-        Accompany with text: Each image of a wireframe, flow, or research artifact should be accompanied by a clear
-        explanation of what you are showing, why it's important, and what you learned from it.</p>
-    </section>
-
     <div class="project-media">
       <div class="project-media">
-        <img src="../../images/SwapNow.png" alt="Proyecto 1" data-lightbox="single" data-title="Proyecto 1" />
+        <img src="../../images/SwapNow_mockup.png" alt="Swap Now app Mockup" data-lightbox="single"
+          data-title="Swap Now app Mockup" />
+          <p class="project-caption">Swap Now app Mockup</p>
       </div>
 
+      <div>
+        <section class="project-challenge">
+          <h2>The Challenge</h2>
+          <p>The high cost of clothing in Argentina created a need for accessible second-hand options. The challenge was
+            to create a secure, direct, and community-driven online channel for trusted groups to exchange items,
+            bridging the gap between informal chats and secure platforms.</p>
+        </section>
+      </div>
+
+      <section class="project-process">
+        <h2>The Process</h2>
+        <ul>
+          <li><strong>Research:</strong> Identified user needs for secure group-based exchanges and circular fashion
+            interest.</li>
+
+          <li><strong>Ideation:</strong> Developed initial Sketches and defined a clear User Flow.</li>
+
+          <li><strong>Prototyping:</strong> Created Mid-Fidelity Wireframes, iteratively refining designs based on
+            usability considerations
+            (e.g., improved transaction steps, simplified navigation icons).</li>
+
+        </ul>
+      </section>
+
+      <section class="project-gallery">
+        <h2>Galería</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-lightbox="gallery" data-title=">User Flow: Detailing the intuitive path users take to browse, connect, and exchange items on Swap Now.">
+            <img src="../../images/user flow_SwapNow.png" alt="User Flow" />
+            <p class="project-caption">User Flow: Detailing the intuitive path users take to browse, connect, and exchange items on Swap Now.</p>
+          </div>
+          <div class="gallery-item" data-lightbox="gallery" data-title="Sketches: The foundational stage of design, outlining initial screen ideas and user interactions.">
+            <img src="../../images/Sketches_SwapNow.png" alt="Sketches" />
+            <p class="project-caption">Sketches: The foundational stage of design, outlining initial screen ideas and user interactions.</p>
+          </div>
+          <div class="gallery-item" data-lightbox="gallery" data-title="Wireframe Development: Planning the app's structure and user interface before visual design implementation.">
+            <img src="../../images/Mid-Fidelity_SwapNow.png" alt="Wireframe Development" />
+            <p class="project-caption">Wireframe Development: Planning the app's structure and user interface before visual design implementation.</p>
+          </div>
+          <div class="gallery-item" data-lightbox="gallery" data-title="Iterative Refinement: Before-and-after views demonstrating key UI improvements for enhanced usability.">
+            <img src="../../images/Mid-Fidelity2_SwapNow.png" alt="Iterative Refinement" />
+            <p class="project-caption">Iterative Refinement: Before-and-after views demonstrating key UI improvements for enhanced usability.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-inspiration">
+        <h2>Visual Inspiration</h2>
+        <p>The aesthetic aimed for a "FRESH + SIMPLE + MINIMALIST and FRIENDLY" feel, utilizing a clean palette of
+          greens, blues, and pinks for an inviting and modern user experience.</p>
+      </section>
+
+      <section class="project-gallery">
+        <div class="gallery-grid">
+          <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 1">
+            <img src="../../images/Inpisrational Moodboard_SwapNow.png" alt="Imagen 1" />
+            <p class="project-caption">Inspirational Moodboard</p>
+          </div>
+          <div class="gallery-item" data-lightbox="gallery" data-title="Pantalla 2">
+            <img src="../../images/design system_SwapNow.png" alt="Imagen 2" />
+            <p class="project-caption">Design System</p>
+          </div>
+       </section>
+
+      <section class="project-result">
+        <h2>The Solution</h2>
+        <p>Swap Now offers a community-focused digital space for second-hand clothing exchange. Key features include:
+        </p>
+        <ul>
+          <li><strong>Group-centric trading:</strong> Facilitates exchanges within trusted circles.</li>
+
+          <li><strong>Direct communication:</strong> Users can chat and arrange swaps/sales directly.</li>
+
+          <li><strong>Intuitive UI:</strong> Designed to be fresh, simple, minimalist, and friendly, ensuring ease of
+            use.</li>
+        </ul>
+
+      </section>
+
+      <div class="project-media">
+        <video autoplay muted loop playsinline class="project-video">
+          <source src="../../videos/Swap Now flow interaction.mp4" type="video/mp4">
+          <p class="fallback-text">Este proyecto incluye un video, pero tu navegador no lo puede mostrar.</p>
+        </video>
+      </div>
 
       <section class="project-learnings">
         <h2>Outcomes & Learnings</h2>
-        <p>What were the results of your project? Did it achieve its goals? What did you
-          learn from the process? What would you do differently next time?</p>
+        <p>The project successfully designed a platform to address the need for affordable clothing through
+          community-driven exchanges. A key learning was the high value users place on trust and community in
+          second-hand transactions. The established core peer-to-peer exchange functionality serves as a strong
+          foundation for integrating future features like community events.</p>
       </section>
 
       <!--Previous project| back to top | Next project-->
@@ -215,7 +222,7 @@
         <li><a href="../../Index.html#contact">Contact</a></li>
       </ul>
 
-       <ul class="footer-social-links">
+      <ul class="footer-social-links">
         <li><a href="https://www.behance.net/MalalaSoifer" target="_blank" aria-label="Behance"><i
               class="fab fa-behance"></i></a></li>
         <li><a href="https://www.linkedin.com/in/malalasoifer/?locale=en_US" target="_blank" aria-label="LinkedIn"><i
@@ -233,11 +240,11 @@
   </footer>
 
 
-   <!-- FIXED: Updated script path to be relative -->
+  <!-- FIXED: Updated script path to be relative -->
   <script src="../../js/script.js"></script>
 
 
- 
+
   <!-- Lightbox -->
   <div id="customLightbox" class="custom-lightbox">
     <div class="lightbox-content">
