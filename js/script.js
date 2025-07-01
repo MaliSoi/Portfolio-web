@@ -120,16 +120,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // Project Filtering
   // ==================
   function filterProjects(profile) {
-    if (projectCards && projectCards.length > 0) {
-      projectCards.forEach(card => {
-        if (profile === 'uxui') {
-          card.classList.toggle('hidden', !card.classList.contains('uxui-project'));
-        } else {
-          card.classList.toggle('hidden', !card.classList.contains('textile-project'));
-        }
-      });
-    }
+  if (projectCards && projectCards.length > 0) {
+    projectCards.forEach(card => {
+      if (profile === 'uxui') {
+        card.classList.toggle('hidden', !card.classList.contains('uxui-project'));
+      } else {
+        card.classList.toggle('hidden', !card.classList.contains('textile-project'));
+      }
+    });
   }
+
+  // Mostrar u ocultar mensaje "Work in Progress"
+  const textileStatus = document.getElementById('textile-status');
+  if (textileStatus) {
+    textileStatus.style.display = (profile === 'textile') ? 'block' : 'none';
+  }
+}
 
   // =======================
   // Fade-in on Scroll Logic
