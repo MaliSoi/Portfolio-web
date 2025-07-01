@@ -131,6 +131,25 @@ header {
     vertical-align: middle;
 }
 
+.top-social {
+  position: absolute;
+  top: 1.2rem;
+  right: -1rem; /* Ajustá si se superpone con el botón de toggle */
+  z-index: 1000;
+}
+
+.top-social a {
+  color: #333;
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.top-social a:hover {
+  color: #0a66c2; /* color oficial de LinkedIn */
+}
+
+
 /* --- MOBILE FIRST: Estilos por defecto para el menú hamburguesa y el menú oculto --- */
 
 /* AGREGAR: Ocultar el botón de escritorio por defecto en móvil */
